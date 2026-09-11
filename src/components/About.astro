@@ -1,0 +1,329 @@
+<section class="about" id="about">
+	<div class="about__inner">
+		<div class="about__media">
+			<img
+				src="/images/about.jpg"
+				alt="Учасники РЛУС «Десна»"
+			/>
+
+			<div class="about__media-label">
+				<span>РЛУС «Десна»</span>
+				<strong>Деснянський район · Київ</strong>
+			</div>
+		</div>
+
+		<div class="about__content">
+			<p class="section-label">Про нас</p>
+
+			<h2>
+				Ми об’єднуємо
+				<span>лідерів району</span>
+			</h2>
+
+			<p class="about__lead">
+				Рада Лідерів учнівського самоврядування Деснянського району —
+				це орган учнівського самоврядування, який об’єднує усі шкільні
+				самоврядування району.
+			</p>
+
+			<p class="about__text">
+				Ми створюємо простір для розвитку лідерства, підтримуємо
+				молодіжні ініціативи та залучаємо підлітків до життя громади
+				та міста.
+			</p>
+
+			<div class="about__values">
+
+	<div class="about__value">
+		<div class="about__value-icon" aria-hidden="true">
+			<svg viewBox="0 0 48 48">
+				<circle cx="22" cy="26" r="15" />
+				<circle cx="22" cy="26" r="9" />
+				<circle cx="22" cy="26" r="3" />
+				<path d="M27 21L40 8" />
+				<path d="M34 8H40V14" />
+			</svg>
+		</div>
+
+		<div class="about__value-content">
+			<h3>Місія</h3>
+
+			<p>
+				Створити простір для розвитку лідерства, підтримати молодіжні
+				ініціативи та залучити підлітків до життя громади та міста.
+			</p>
+		</div>
+	</div>
+
+
+	<div class="about__value">
+		<div class="about__value-icon" aria-hidden="true">
+			<svg viewBox="0 0 48 48">
+				<path d="M24 5C15.7 5 9 11.5 9 19.6C9 25 12 28.4 15.2 31.5C17 33.3 18 35 18 37H30C30 35 31 33.3 32.8 31.5C36 28.4 39 25 39 19.6C39 11.5 32.3 5 24 5Z" />
+				<path d="M18 41H30" />
+				<path d="M20 45H28" />
+			</svg>
+		</div>
+
+		<div class="about__value-content">
+			<h3>Візія</h3>
+
+			<p>
+				Молодь Деснянського району — активна спільнота лідерів, що
+				творить майбутнє громади на основі відповідальності, підтримки
+				й громадянської активності.
+			</p>
+		</div>
+	</div>
+
+	</div>
+
+	</div>
+</div>
+</section>
+
+<style>
+	.about {
+		background: #ffffff;
+		padding: 130px 0;
+	}
+
+	.about__inner {
+		width: min(calc(100% - 48px), var(--container));
+		margin: 0 auto;
+
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: clamp(70px, 8vw, 130px);
+		align-items: start;
+	}
+
+	.about__media {
+		position: sticky;
+		top: 120px;
+
+		min-height: 680px;
+
+		overflow: hidden;
+
+		border-radius: 24px;
+		background: var(--color-surface);
+	}
+
+	.about__media img {
+		position: absolute;
+		inset: 0;
+
+		width: 100%;
+		height: 100%;
+
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.about__media::after {
+		content: '';
+
+		position: absolute;
+		inset: 0;
+
+		background:
+			linear-gradient(
+				to top,
+				rgba(9, 17, 31, 0.66) 0%,
+				rgba(9, 17, 31, 0.08) 42%,
+				transparent 70%
+			);
+	}
+
+	.about__media-label {
+		position: absolute;
+		z-index: 2;
+
+		left: 28px;
+		right: 28px;
+		bottom: 28px;
+
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+
+		color: white;
+	}
+
+	.about__media-label span {
+		color: var(--color-yellow);
+
+		font-size: 11px;
+		font-weight: 800;
+
+		letter-spacing: 0.13em;
+		text-transform: uppercase;
+	}
+
+	.about__media-label strong {
+		font-size: 19px;
+		font-weight: 650;
+	}
+
+	.about__content {
+		padding-top: 20px;
+	}
+
+	.section-label {
+		margin: 0 0 28px;
+
+		color: var(--color-blue);
+
+		font-size: 12px;
+		font-weight: 800;
+
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		max-width: 760px;
+
+		margin: 0;
+
+		color: var(--color-navy);
+
+		font-size: clamp(52px, 5.2vw, 86px);
+		font-weight: 750;
+
+		line-height: 0.98;
+		letter-spacing: -0.055em;
+	}
+
+	h2 span {
+		display: block;
+
+		color: var(--color-blue);
+
+		font-weight: 500;
+		font-style: italic;
+	}
+
+	.about__lead {
+		max-width: 750px;
+
+		margin: 48px 0 0;
+
+		color: var(--color-text);
+
+		font-size: 22px;
+		font-weight: 500;
+		line-height: 1.55;
+	}
+
+	.about__text {
+		max-width: 720px;
+
+		margin: 22px 0 0;
+
+		color: var(--color-muted);
+
+		font-size: 17px;
+		line-height: 1.7;
+	}
+
+	.about__values {
+		margin-top: 70px;
+
+		border-top: 1px solid var(--color-border);
+	}
+
+	.about__value {
+		display: grid;
+		grid-template-columns: 56px 1fr;
+		gap: 26px;
+
+		padding: 34px 0;
+
+		border-bottom: 1px solid var(--color-border);
+	}
+    .about__value-icon {
+	width: 48px;
+	height: 48px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	color: var(--color-blue);
+}
+
+.about__value-icon svg {
+	width: 42px;
+	height: 42px;
+
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+	.about__value h3 {
+		margin: 0;
+
+		color: var(--color-navy);
+
+		font-size: 24px;
+		font-weight: 700;
+	}
+
+	.about__value p {
+		max-width: 650px;
+
+		margin: 12px 0 0;
+
+		color: var(--color-muted);
+
+		font-size: 16px;
+		line-height: 1.65;
+	}
+
+	@media (max-width: 950px) {
+		.about {
+			padding: 90px 0;
+		}
+
+		.about__inner {
+			grid-template-columns: 1fr;
+			gap: 60px;
+		}
+
+		.about__media {
+			position: relative;
+			top: auto;
+
+			min-height: 560px;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.about__inner {
+			width: min(calc(100% - 32px), var(--container));
+		}
+
+		.about__media {
+			min-height: 440px;
+			border-radius: 18px;
+		}
+
+		h2 {
+			font-size: clamp(48px, 14vw, 68px);
+		}
+
+		.about__lead {
+			font-size: 19px;
+		}
+
+		.about__value {
+			grid-template-columns: 45px 1fr;
+			gap: 16px;
+		}
+	}
+</style>

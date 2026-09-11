@@ -1,0 +1,425 @@
+---
+
+import StructureModal from './StructureModal.astro';
+
+const structure = [
+	{
+		number: '01',
+		title: 'Президент',
+		description:
+			'Очолює РЛУС, представляє її інтереси, координує роботу Віцепрезидента, Секретаря, Директорів секторів та членів РЛУС, формує порядок денний і проводить збори.',
+	},
+	{
+		number: '02',
+		title: 'Віцепрезидент',
+		description:
+			'Є головним радником Президента, має рівні з ним права та виконує його розпорядження й обов’язки у разі відсутності Президента або інших визначених Статутом обставин.',
+	},
+	{
+		number: '03',
+		title: 'Секретар',
+		description:
+			'Веде таблиці активності та днів народжень, організовує привітання, за проханням Президента готує стислий підсумок зборів і здійснює пряму комунікацію з Куратором.',
+	},
+	{
+		number: '04',
+		title: 'Директори секторів',
+		description:
+			'Координують та організовують роботу своїх секторів, ведуть таблиці активності учасників і разом із Президією готують місячні плани роботи.',
+	},
+	{
+		number: '05',
+		title: 'Заступники Директорів',
+		description:
+			'Допомагають Директору сектора, виконують доручені завдання та за потреби можуть тимчасово виконувати його обов’язки до обрання нового Директора.',
+	},
+	{
+		number: '06',
+		title: 'Члени РЛУС',
+		description:
+			'Працюють щонайменше в одному секторі, виконують завдання в межах обраних напрямів та сприяють комунікації між закладами освіти Деснянського району.',
+	},
+];
+---
+
+<section class="structure" id="team">
+	<div class="structure__inner">
+		<div class="structure__intro">
+			<p class="structure__label">Структура</p>
+
+			<h2>
+				Як працює
+				<span>наша команда</span>
+			</h2>
+
+			<p class="structure__lead">
+				Внутрішня взаємодія РЛУС «Десна» побудована як єдина команда,
+				у якій кожен рівень структури має своє місце.
+			</p>
+
+		</div>
+
+		<div class="structure__list">
+			{
+				structure.map((item) => (
+					<article
+						class="structure__item"
+						data-structure-item
+					>
+						<div class="structure__number">
+							{item.number}
+						</div>
+
+						<div class="structure__item-content">
+							<h3>
+	<button
+		class="structure__title-button"
+		type="button"
+		data-structure-modal={item.number}
+	>
+		{item.title}
+	</button>
+</h3>
+
+							{
+								item.description && (
+									<p>{item.description}</p>
+								)
+							}
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+    <StructureModal />
+
+<script>
+	const items = document.querySelectorAll('[data-structure-item]');
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-visible');
+				}
+			});
+		},
+		{
+			threshold: 0.35,
+			rootMargin: '0px 0px -10% 0px',
+		}
+	);
+
+	items.forEach((item) => observer.observe(item));
+</script>
+
+<style>
+	.structure {
+		position: relative;
+
+		background: var(--color-navy);
+		color: #ffffff;
+
+		padding: 140px 0 150px;
+
+		overflow: clip;
+	}
+
+.structure::before {
+	content: 'ДЕСНА';
+
+	position: absolute;
+
+    top: 20px;
+	left: 55%;
+
+	color: rgba(255, 255, 255, 0.035);
+
+    font-size: clamp(80px, 7.3vw, 128px);
+	font-weight: 800;
+
+	line-height: 0.9;
+	letter-spacing: -0.06em;
+	white-space: nowrap;
+
+	pointer-events: none;
+	user-select: none;
+}
+
+	.structure__inner {
+		position: relative;
+		z-index: 1;
+
+		width: min(calc(100% - 48px), var(--container));
+		margin: 0 auto;
+
+		display: grid;
+		grid-template-columns: 0.82fr 1.18fr;
+
+		gap: clamp(80px, 10vw, 160px);
+		align-items: start;
+	}
+
+	/* Ліва частина залишається на місці,
+	   поки справа прокручується структура */
+	.structure__intro {
+		position: sticky;
+		top: 130px;
+
+		max-width: 520px;
+	}
+
+	.structure__label {
+		margin: 0 0 28px;
+
+		color: var(--color-yellow);
+
+		font-size: 12px;
+		font-weight: 800;
+
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	.structure h2 {
+		margin: 0;
+
+		color: #ffffff;
+
+		font-size: clamp(56px, 5.7vw, 92px);
+		font-weight: 750;
+
+		line-height: 0.95;
+		letter-spacing: -0.055em;
+	}
+
+	.structure h2 span {
+		display: block;
+
+		color: rgba(255, 255, 255, 0.52);
+
+		font-weight: 450;
+	}
+
+	.structure__lead {
+		max-width: 470px;
+
+		margin: 38px 0 0;
+
+		color: rgba(255, 255, 255, 0.62);
+
+		font-size: 17px;
+		line-height: 1.7;
+	}
+
+	.structure__list {
+		position: relative;
+
+		border-top: 1px solid rgba(255, 255, 255, 0.13);
+	}
+
+	.structure__list::before {
+		content: '';
+
+		position: absolute;
+
+		left: 44px;
+		top: 0;
+		bottom: 0;
+
+		width: 1px;
+
+		background: linear-gradient(
+			to bottom,
+			var(--color-blue),
+			rgba(255, 255, 255, 0.08) 85%
+		);
+	}
+
+	.structure__item {
+		position: relative;
+
+		min-height: 285px;
+
+		display: grid;
+		grid-template-columns: 90px 1fr;
+		gap: 28px;
+
+		align-items: center;
+
+		padding: 52px 0;
+
+		border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+
+		opacity: 0.28;
+		transform: translateY(28px);
+
+		transition:
+			opacity 700ms ease,
+			transform 700ms ease;
+	}
+
+	.structure__item.is-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.structure__number {
+		position: relative;
+		z-index: 2;
+
+		width: 48px;
+		height: 48px;
+
+		display: grid;
+		place-items: center;
+
+		border: 1px solid rgba(255, 255, 255, 0.28);
+		border-radius: 50%;
+
+		background: var(--color-navy);
+
+		color: var(--color-yellow);
+
+		font-size: 11px;
+		font-weight: 800;
+
+		letter-spacing: 0.08em;
+	}
+
+	.structure__item-content {
+		max-width: 650px;
+	}
+
+	.structure__item h3 {
+		margin: 0;
+
+		color: #ffffff;
+
+		font-size: clamp(34px, 3.2vw, 55px);
+		font-weight: 600;
+
+		line-height: 1.05;
+		letter-spacing: -0.035em;
+	}
+
+.structure__title-button {
+	all: unset;
+
+	display: inline-block;
+
+	position: relative;
+
+	color: inherit;
+
+	cursor: pointer;
+
+	padding: 5px 10px 7px;
+	margin: -5px -10px -7px;
+
+	border-radius: 10px;
+
+	transition:
+		color 180ms ease,
+		background 180ms ease,
+		transform 180ms ease;
+}
+
+.structure__title-button:hover {
+	color: var(--color-yellow);
+
+	background: rgba(255, 255, 255, 0.055);
+
+	transform: translateX(4px);
+}
+
+.structure__title-button:focus-visible {
+	outline: 2px solid var(--color-yellow);
+	outline-offset: 5px;
+}
+
+	/* На hover елемент стає трохи яскравішим */
+	.structure__item:hover .structure__number {
+		border-color: var(--color-yellow);
+		background: var(--color-yellow);
+		color: var(--color-navy);
+	}
+
+	.structure__number {
+		transition:
+			background 180ms ease,
+			border-color 180ms ease,
+			color 180ms ease;
+	}
+
+	@media (max-width: 950px) {
+		.structure {
+			padding: 100px 0;
+		}
+
+		.structure__inner {
+			grid-template-columns: 1fr;
+			gap: 70px;
+		}
+
+		.structure__intro {
+			position: relative;
+			top: auto;
+
+			max-width: 700px;
+		}
+
+		.structure__item {
+			min-height: auto;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.structure {
+			padding: 80px 0;
+		}
+
+		.structure__inner {
+			width: min(calc(100% - 32px), var(--container));
+			gap: 55px;
+		}
+
+		.structure h2 {
+			font-size: clamp(50px, 15vw, 70px);
+		}
+
+		.structure__list::before {
+			left: 25px;
+		}
+
+		.structure__item {
+			grid-template-columns: 52px 1fr;
+			gap: 18px;
+
+			padding: 38px 0;
+		}
+
+		.structure__number {
+			width: 38px;
+			height: 38px;
+
+			font-size: 9px;
+		}
+
+		.structure__item h3 {
+			font-size: 32px;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.structure__item {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
+
+</style>

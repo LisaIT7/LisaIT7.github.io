@@ -1,0 +1,705 @@
+---
+const partners = [
+	{
+		number: '01',
+		name: 'ГОРА',
+		image: '/images/cooperation/gora.png',
+		href: 'https://www.instagram.com/gora.leaderr?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+	{
+		number: '02',
+		name: 'ШАРМ',
+		image: '/images/cooperation/sharm.png',
+		href: 'https://www.instagram.com/sharm.leader?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+	{
+		number: '03',
+		name: 'Darnytsia Leader',
+		image: '/images/cooperation/darn.png',
+		href: 'https://www.instagram.com/darnytsia_leader?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+	{
+		number: '04',
+		name: 'Районна асоціація "Старшокласник"',
+		image: '/images/cooperation/svat.png',
+		href: 'https://www.instagram.com/svyatoshyn_official?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+	{
+		number: '05',
+		name: 'СОЛО',
+		image: '/images/cooperation/obolon.png',
+		href: 'https://www.instagram.com/solo.obolon?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+	{
+		number: '06',
+		name: 'СУП «ЛІДЕР»',
+		image: '/images/cooperation/podil.svg',
+		href: 'https://www.instagram.com/sup_leaderr?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+	{
+		number: '07',
+		name: 'РАДА «ДНІПРО»',
+		image: '/images/cooperation/dnipro.png',
+		href: 'https://www.instagram.com/rada_dnipro?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+	{
+		number: '08',
+		name: 'РРС "Лідер"',
+		image: '/images/cooperation/soloma.png',
+		href: 'https://www.instagram.com/rrsl_soloma?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+	{
+		number: '09',
+		name: 'ПЕРЛ',
+		image: '/images/cooperation/pechersk.png',
+		href: 'https://www.instagram.com/perl_pe4ersk?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+	{
+		number: '10',
+		name: 'КМРС',
+		image: '/images/cooperation/kmrs.png',
+		href: 'https://www.instagram.com/kmrs.leaders?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+		{
+		number: '11',
+		name: 'ЦДЮТ',
+		image: '/images/cooperation/cdut.png',
+		href: 'https://www.instagram.com/cdutdesn.kyiv?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+		{
+		number: '12',
+		name: 'РУО Деснянського району',
+		image: '/images/cooperation/ruo.png',
+		href: 'https://www.instagram.com/ruodesnianskyi?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+		{
+		number: '13',
+		name: 'Деснянська РДА',
+		image: '/images/cooperation/pda.png',
+		href: 'https://www.instagram.com/desnianskarda?stkn=OGZkZWJnY3hwZmh6',
+	},
+		{
+		number: '14',
+		name: 'Деснянська РО ТЧХ',
+		image: '/images/cooperation/hrest.png',
+		href: 'https://www.instagram.com/desnyansky_kyiv?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+		{
+		number: '15',
+		name: 'Управління молоді та спорту Деснянської РДА',
+		image: '/images/cooperation/molod.png',
+		href: 'https://www.instagram.com/deptyouthandsport?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+		{
+		number: '16',
+		name: 'Департамент молоді та спорту міста Києва',
+		image: '/images/cooperation/dms.png',
+		href: 'https://www.instagram.com/dms_kyiv?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+		{
+		number: '17',
+		name: 'МРУС',
+		image: '/images/cooperation/mrus.png',
+		href: 'https://www.instagram.com/if_mrus?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+
+		{
+		number: '18',
+		name: 'УПЛ',
+		image: '/images/cooperation/upl.png',
+		href: 'https://www.instagram.com/_parliament_lviv?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+		{
+		number: '19',
+		name: 'Дитяча Дорадча Рада Вінниці',
+		image: '/images/cooperation/ddr.png',
+		href: 'https://www.instagram.com/vin.children.council?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+		{
+		number: '20',
+		name: 'БФ “Здоровий Всесвіт”',
+		image: '/images/cooperation/zdor.png',
+		href: 'https://www.instagram.com/zdoroviy_vsesvit?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+			{
+		number: '21',
+		name: 'Театр Концепція',
+		image: '/images/cooperation/teatr.png',
+		href: 'https://www.instagram.com/theatre_conception?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+			{
+		number: '22',
+		name: 'Greek House',
+		image: '/images/cooperation/greek.png',
+		href: 'https://www.instagram.com/greek.house.ua?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+
+			{
+		number: '23',
+		name: 'МІСТО СВІТЛА',
+		image: '/images/cooperation/misto.png',
+		href: 'https://www.instagram.com/mistosvitlachurch?stkn=MW5jMWhmcHBpc3JkaA==',
+	},
+			{
+		number: '24',
+		name: 'БФ «Українська Думка»',
+		image: '/images/cooperation/dumka.png',
+		href: 'https://www.instagram.com/ukrainska_dumka_?stkn=Y3hjZmZ5OW9qc3J5',
+	},
+			{
+		number: '25',
+		name: 'Інтератлетика',
+		image: '/images/cooperation/inter.png',
+		href: 'https://www.instagram.com/interatletika?stkn=dWw4eHQweW0ya3Yx',
+	},
+			{
+		number: '26',
+		name: 'ІКСПАРК',
+		image: '/images/cooperation/xpark.png',
+		href: 'https://www.instagram.com/x.park.kyiv?stkn=OW5lNW83d2h3OHl0',
+	},
+			{
+		number: '27',
+		name: 'Triolan',
+		image: '/images/cooperation/triolan.png',
+		href: 'https://www.instagram.com/triolan_me?stkn=MWVhcjI0bGQwcGxpbA==',
+	},
+			{
+		number: '28',
+		name: 'SUP Port',
+		image: '/images/cooperation/sup.png',
+		href: 'https://www.instagram.com/sup.port.kyiv?stkn=MWJoeWJlNHMzbDk1Zw==',
+	},
+			{
+		number: '29',
+		name: 'ОСС',
+		image: '/images/cooperation/occ.png',
+		href: 'https://www.instagram.com/stud.governments?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+	},
+			{
+		number: '30',
+		name: 'Центр комунікації',
+		image: '/images/cooperation/centr.png',
+		href: 'https://www.instagram.com/v__centri?stkn=NTloMjdkaXE3ZnJl',
+	},
+];
+---
+
+<section class="cooperation" id="cooperation">
+	<div class="cooperation__inner">
+
+		<header class="cooperation__header">
+			<div class="cooperation__heading">
+				<p class="cooperation__label">Партнерство та взаємодія</p>
+
+				<h2>
+					Співпраця
+				</h2>
+			</div>
+
+			<p class="cooperation__intro">
+				Разом із районними радами, організаціями та партнерами ми реалізовуємо спільні ініціативи й створюємо нові можливості для учнівської молоді.
+			</p>
+		</header>
+
+		<div class="cooperation__grid">
+			{
+				partners.map((partner) => (
+					<article class="cooperation-card">
+
+						{
+							partner.href ? (
+								<a
+									class="cooperation-card__link"
+									href={partner.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={
+										partner.name
+											? `Відкрити сторінку «${partner.name}»`
+											: 'Відкрити сторінку організації'
+									}
+								>
+									<div class="cooperation-card__visual">
+										{
+											partner.image ? (
+												<img
+													src={partner.image}
+													alt={partner.name || 'Логотип організації'}
+													loading="lazy"
+												/>
+											) : (
+												<div class="cooperation-card__placeholder">
+													<span>{partner.number}</span>
+													<p>Логотип</p>
+												</div>
+											)
+										}
+									</div>
+
+									{
+										partner.name && (
+											<p class="cooperation-card__name">
+												{partner.name}
+											</p>
+										)
+									}
+
+									<span class="cooperation-card__arrow">
+										<svg
+											viewBox="0 0 24 24"
+											aria-hidden="true"
+										>
+											<path d="M7 17L17 7" />
+											<path d="M9 7h8v8" />
+										</svg>
+									</span>
+								</a>
+							) : (
+								<div class="cooperation-card__link cooperation-card__link--inactive">
+									<div class="cooperation-card__visual">
+										{
+											partner.image ? (
+												<img
+													src={partner.image}
+													alt={partner.name || 'Логотип організації'}
+													loading="lazy"
+												/>
+											) : (
+												<div class="cooperation-card__placeholder">
+													<span>{partner.number}</span>
+													<p>Логотип</p>
+												</div>
+											)
+										}
+									</div>
+
+									{
+										partner.name && (
+											<p class="cooperation-card__name">
+												{partner.name}
+											</p>
+										)
+									}
+								</div>
+							)
+						}
+
+					</article>
+				))
+			}
+		</div>
+
+		<div class="cooperation__cta">
+			<div>
+				<p class="cooperation__cta-label">
+					Відкриті до нових ідей
+				</p>
+
+				<h3>
+					Запропонуйте 
+					<span> співпрацю</span>
+				</h3>
+			</div>
+
+			<a class="cooperation__cta-link" href="#contacts">
+				<span>Зв’язатися з нами</span>
+
+				<svg viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M5 12h13" />
+					<path d="M13 6l6 6-6 6" />
+				</svg>
+			</a>
+		</div>
+
+	</div>
+</section>
+
+<style>
+	.cooperation {
+		position: relative;
+		padding: 105px 0 120px;
+
+		background:
+			radial-gradient(
+				circle at 85% 15%,
+				rgba(36, 87, 230, 0.055),
+				transparent 30%
+			),
+			#f8f9fc;
+	}
+
+	.cooperation::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+
+		width: min(calc(100% - 48px), var(--container));
+		height: 1px;
+
+		background: var(--color-border);
+		transform: translateX(-50%);
+	}
+
+	.cooperation__inner {
+		width: min(calc(100% - 48px), var(--container));
+		margin: 0 auto;
+	}
+
+	/* HEADER */
+
+	.cooperation__header {
+		display: grid;
+		grid-template-columns: 1fr 0.75fr;
+		gap: 90px;
+		align-items: end;
+
+		margin-bottom: 62px;
+	}
+
+	.cooperation__label {
+		margin: 0 0 14px;
+
+		color: var(--color-blue);
+		font-size: 13px;
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: 0.13em;
+		text-transform: uppercase;
+	}
+
+	.cooperation__heading h2 {
+		margin: 0;
+
+		color: var(--color-navy);
+		font-size: clamp(68px, 6.2vw, 112px);
+		font-weight: 650;
+		line-height: 0.92;
+		letter-spacing: -0.055em;
+	}
+
+	.cooperation__intro {
+		max-width: 520px;
+		margin: 0 0 7px auto;
+
+		color: var(--color-muted);
+		font-size: 20px;
+		line-height: 1.65;
+	}
+
+	/* LOGO GRID */
+
+	.cooperation__grid {
+		display: grid;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.cooperation-card {
+		min-width: 0;
+	}
+
+	.cooperation-card__link {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		height: 220px;
+        padding: 24px 22px;
+        box-sizing: border-box;
+
+		background: rgba(255, 255, 255, 0.88);
+		border: 1px solid var(--color-border);
+		border-radius: 24px;
+
+		color: var(--color-navy);
+		text-decoration: none;
+
+		box-shadow:
+			0 1px 2px rgba(13, 22, 38, 0.01),
+			0 10px 30px rgba(13, 22, 38, 0.025);
+
+		transition:
+			transform 220ms ease,
+			box-shadow 220ms ease,
+			border-color 220ms ease,
+			background 220ms ease;
+	}
+
+	a.cooperation-card__link:hover {
+		transform: translateY(-5px);
+
+		background: #ffffff;
+		border-color: rgba(36, 87, 230, 0.2);
+
+		box-shadow:
+			0 2px 4px rgba(13, 22, 38, 0.02),
+			0 18px 42px rgba(13, 22, 38, 0.07);
+	}
+
+	.cooperation-card__visual {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 100%;
+		height: 110px;
+	}
+
+	/*
+		ВАЖЛИВО:
+		логотипи НЕ обрізаються.
+		Вони завжди показуються повністю.
+	*/
+	.cooperation-card__visual img {
+		display: block;
+
+		width: 100%;
+		height: 100%;
+		max-width: 150px;
+		max-height: 100px;
+
+		object-fit: contain;
+		object-position: center;
+	}
+
+	/* PLACEHOLDER */
+
+	.cooperation-card__placeholder {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+
+		width: 92px;
+		height: 92px;
+
+		border: 1px dashed rgba(13, 22, 38, 0.15);
+		border-radius: 50%;
+
+		color: rgba(13, 22, 38, 0.35);
+	}
+
+	.cooperation-card__placeholder span {
+		font-size: 14px;
+		font-weight: 750;
+		letter-spacing: 0.08em;
+	}
+
+	.cooperation-card__placeholder p {
+		margin: 0;
+
+		font-size: 10px;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	.cooperation-card__name {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+
+	    min-height: 40px;
+	    max-width: 190px;
+	    margin: 10px 0 0;
+
+		color: var(--color-navy);
+		font-size: 14px;
+		font-weight: 650;
+		line-height: 1.4;
+		text-align: center;
+	}
+
+	/* EXTERNAL LINK ARROW */
+
+	.cooperation-card__arrow {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+
+		display: grid;
+		place-items: center;
+
+		width: 31px;
+		height: 31px;
+
+		border-radius: 50%;
+		background: #f2f5fc;
+
+		color: var(--color-blue);
+
+		opacity: 0;
+		transform: translate(-4px, 4px);
+
+		transition:
+			opacity 180ms ease,
+			transform 180ms ease;
+	}
+
+	.cooperation-card__arrow svg {
+		width: 15px;
+		height: 15px;
+
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.8;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+	a.cooperation-card__link:hover .cooperation-card__arrow {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+
+	.cooperation-card__link--inactive {
+		cursor: default;
+	}
+
+	/* CTA */
+
+	.cooperation__cta {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 50px;
+
+		margin-top: 64px;
+		padding: 46px 52px;
+
+		background: var(--color-navy);
+		border-radius: 28px;
+	}
+
+	.cooperation__cta-label {
+		margin: 0 0 9px;
+
+		color: rgba(255, 255, 255, 0.58);
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.cooperation__cta h3 {
+		margin: 0;
+
+		color: #ffffff;
+		font-size: clamp(34px, 3.1vw, 54px);
+		font-weight: 600;
+		line-height: 1;
+		letter-spacing: -0.04em;
+	}
+
+	.cooperation__cta h3 span {
+		color: var(--color-yellow);
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	.cooperation__cta-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 16px;
+
+		flex: 0 0 auto;
+
+		padding: 15px 20px;
+
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 999px;
+
+		color: #ffffff;
+		font-size: 14px;
+		font-weight: 700;
+		text-decoration: none;
+
+		transition:
+			background 180ms ease,
+			border-color 180ms ease;
+	}
+
+	.cooperation__cta-link svg {
+		width: 21px;
+		height: 21px;
+
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.8;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+
+		transition: transform 180ms ease;
+	}
+
+	.cooperation__cta-link:hover {
+		background: rgba(255, 255, 255, 0.08);
+		border-color: rgba(255, 255, 255, 0.35);
+	}
+
+	.cooperation__cta-link:hover svg {
+		transform: translateX(5px);
+	}
+
+	/* RESPONSIVE FOUNDATION */
+
+	@media (max-width: 1200px) {
+		.cooperation__grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	@media (max-width: 900px) {
+		.cooperation__header {
+			grid-template-columns: 1fr;
+			gap: 28px;
+		}
+
+		.cooperation__intro {
+			margin-left: 0;
+		}
+
+		.cooperation__grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (max-width: 780px) {
+		.cooperation {
+			padding: 82px 0 90px;
+		}
+
+		.cooperation__inner {
+			width: min(calc(100% - 32px), var(--container));
+		}
+
+		.cooperation__grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 12px;
+		}
+
+		.cooperation-card__link {
+			min-height: 165px;
+			padding: 20px 14px;
+			border-radius: 20px;
+		}
+
+		.cooperation-card__visual {
+			height: 90px;
+		}
+
+		.cooperation__cta {
+			flex-direction: column;
+			align-items: flex-start;
+
+			padding: 34px 28px;
+			border-radius: 24px;
+		}
+	}
+</style>

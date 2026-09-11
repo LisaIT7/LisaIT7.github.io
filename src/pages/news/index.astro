@@ -1,0 +1,545 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const newsItems = [
+	{
+		date: '22 серпня',
+		category: 'Фестиваль',
+		title: 'Фестиваль Борщу',
+
+		description:
+			'Наші деснянчики взяли участь у Фестивалі Борщу та представили власний рецепт, створений із родинних секретів кожного учасника команди.',
+
+		highlight:
+			'Молодь ідентичності: культура, що об’єднує Україну',
+
+		/*
+			Якщо твоє фото зараз називається інакше,
+			зміни ТІЛЬКИ цей шлях.
+		*/
+		image: '/images/projects/fest.jpg',
+
+		imageAlt: 'Фестиваль Борщу',
+	},
+];
+---
+
+<Layout>
+	<Header />
+
+	<main class="news-page">
+
+		<!-- PAGE INTRO -->
+		<section class="news-hero">
+			<div class="news-hero__inner">
+
+				<div class="news-hero__heading">
+					<p class="news-hero__label">Життя РЛУС «Десна»</p>
+
+					<h1>
+						Новини
+						<span>Десни</span>
+					</h1>
+				</div>
+
+				<p class="news-hero__intro">
+					Події, ініціативи, зустрічі та найважливіше
+					з життя Ради Лідерів учнівського самоврядування.
+				</p>
+
+			</div>
+		</section>
+
+
+		<!-- NEWS -->
+		<section class="news-feed">
+			<div class="news-feed__inner">
+
+				<div class="news-feed__top">
+					<p>Останні новини</p>
+
+					<span>
+						{String(newsItems.length).padStart(2, '0')}
+					</span>
+				</div>
+
+
+				<div class="news-feed__grid">
+					{
+						newsItems.map((item, index) => (
+							<article class="news-card">
+
+								<div class="news-card__media">
+									<img
+										src={item.image}
+										alt={item.imageAlt}
+										loading={index === 0 ? 'eager' : 'lazy'}
+									/>
+
+									<div class="news-card__media-top">
+										<span class="news-card__category">
+											{item.category}
+										</span>
+
+										<span class="news-card__number">
+											{String(index + 1).padStart(2, '0')}
+										</span>
+									</div>
+								</div>
+
+
+								<div class="news-card__content">
+
+									<time>{item.date}</time>
+
+									<h2>{item.title}</h2>
+
+									<p class="news-card__description">
+										{item.description}
+									</p>
+
+									{
+										item.highlight && (
+											<div class="news-card__highlight">
+												<span></span>
+												<p>{item.highlight}</p>
+											</div>
+										)
+									}
+
+									<div class="news-card__footer">
+										<span class="news-card__read">
+											Читати далі
+
+											<svg
+												viewBox="0 0 24 24"
+												aria-hidden="true"
+											>
+												<path d="M5 12h13" />
+												<path d="M13 6l6 6-6 6" />
+											</svg>
+										</span>
+									</div>
+
+								</div>
+
+							</article>
+						))
+					}
+				</div>
+
+			</div>
+		</section>
+
+	</main>
+
+	<Footer />
+</Layout>
+
+
+<style>
+	.news-page {
+		background: #f8f9fc;
+	}
+
+
+	/* ==================================================
+	   NEWS HERO
+	   ================================================== */
+
+	.news-hero {
+	position: relative;
+	padding: 62px 0 52px;
+
+		background:
+			radial-gradient(
+				circle at 82% 20%,
+				rgba(36, 87, 230, 0.08),
+				transparent 31%
+			),
+			#f8f9fc;
+	}
+
+	.news-hero__inner {
+		width: min(calc(100% - 48px), var(--container));
+		margin: 0 auto;
+
+		display: grid;
+		grid-template-columns: 1.08fr 0.72fr;
+		gap: 60px;
+		align-items: end;
+	}
+
+	.news-hero__label {
+		margin: 0 0 15px;
+
+		color: var(--color-blue);
+
+		font-size: 13px;
+		font-weight: 700;
+		line-height: 1;
+
+		letter-spacing: 0.13em;
+		text-transform: uppercase;
+	}
+
+	.news-hero h1 {
+	margin: 0;
+	color: var(--color-navy);
+
+	font-size: clamp(64px, 6.2vw, 108px);
+	font-weight: 650;
+	line-height: 0.88;
+	letter-spacing: -0.06em;
+}
+
+	.news-hero h1 span {
+	display: block;
+	margin-top: 4px;
+		color: var(--color-blue);
+
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	.news-hero__intro {
+	max-width: 500px;
+	margin: 0 0 5px auto;
+	color: var(--color-muted);
+	font-size: 18px;
+	line-height: 1.65;
+}
+
+
+	/* ==================================================
+	   FEED
+	   ================================================== */
+
+	.news-feed {
+		padding: 0 0 120px;
+	}
+
+	.news-feed__inner {
+		width: min(calc(100% - 48px), var(--container));
+		margin: 0 auto;
+	}
+
+	.news-feed__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		padding: 18px 0;
+
+		border-top: 1px solid var(--color-border);
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.news-feed__top p,
+	.news-feed__top span {
+		margin: 0;
+
+		color: var(--color-muted);
+
+		font-size: 12px;
+		font-weight: 700;
+
+		letter-spacing: 0.11em;
+		text-transform: uppercase;
+	}
+
+	.news-feed__top span {
+		color: var(--color-blue);
+	}
+
+
+	/* ==================================================
+	   NEWS CARD
+	   ================================================== */
+
+	.news-feed__grid {
+	display: grid;
+	gap: 26px;
+	margin-top: 28px;
+}
+
+	.news-card {
+		display: grid;
+		grid-template-columns: minmax(0, 1.15fr) minmax(390px, 0.85fr);
+
+		min-height: 520px;
+
+		background: #ffffff;
+
+		border: 1px solid var(--color-border);
+		border-radius: 30px;
+
+		overflow: hidden;
+
+		box-shadow:
+			0 1px 2px rgba(13, 22, 38, 0.01),
+			0 16px 45px rgba(13, 22, 38, 0.045);
+
+		transition:
+			transform 280ms ease,
+			box-shadow 280ms ease;
+	}
+
+	.news-card:hover {
+		transform: translateY(-5px);
+
+		box-shadow:
+			0 2px 4px rgba(13, 22, 38, 0.02),
+			0 24px 60px rgba(13, 22, 38, 0.08);
+	}
+
+
+	/* IMAGE */
+
+	.news-card__media {
+		position: relative;
+		min-width: 0;
+		overflow: hidden;
+
+		background:
+			linear-gradient(
+				145deg,
+				#e9eefb,
+				#eef1f7
+			);
+	}
+
+	.news-card__media img {
+		width: 100%;
+		height: 100%;
+
+		display: block;
+
+		object-fit: cover;
+		object-position: center;
+
+		transition:
+			transform 700ms cubic-bezier(.2, .7, .2, 1);
+	}
+
+	.news-card:hover .news-card__media img {
+		transform: scale(1.025);
+	}
+
+	.news-card__media::after {
+		content: '';
+
+		position: absolute;
+		inset: 0;
+
+		background:
+			linear-gradient(
+				180deg,
+				rgba(7, 17, 37, 0.18) 0%,
+				transparent 30%
+			);
+
+		pointer-events: none;
+	}
+
+	.news-card__media-top {
+		position: absolute;
+		z-index: 2;
+
+		top: 26px;
+		left: 26px;
+		right: 26px;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	.news-card__category {
+		display: inline-flex;
+		align-items: center;
+
+		min-height: 36px;
+		padding: 0 15px;
+
+		border-radius: 999px;
+
+		background: rgba(255, 255, 255, 0.92);
+
+		color: var(--color-navy);
+
+		font-size: 12px;
+		font-weight: 650;
+
+		backdrop-filter: blur(10px);
+	}
+
+	.news-card__number {
+		color: rgba(255, 255, 255, 0.92);
+
+		font-size: 13px;
+		font-weight: 750;
+		letter-spacing: 0.08em;
+	}
+
+
+	/* CONTENT */
+
+	.news-card__content {
+		display: flex;
+		flex-direction: column;
+
+		padding: 48px 48px 42px;
+	}
+
+	.news-card time {
+		color: var(--color-blue);
+
+		font-size: 13px;
+		font-weight: 700;
+
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.news-card h2 {
+		margin: 17px 0 0;
+
+		color: var(--color-navy);
+
+		font-size: clamp(40px, 3.3vw, 62px);
+		font-weight: 650;
+		line-height: 0.98;
+
+		letter-spacing: -0.045em;
+	}
+
+	.news-card__description {
+		max-width: 520px;
+
+		margin: 25px 0 0;
+
+		color: var(--color-muted);
+
+		font-size: 17px;
+		line-height: 1.7;
+	}
+
+	.news-card__highlight {
+		display: flex;
+		align-items: flex-start;
+		gap: 12px;
+
+		margin-top: 27px;
+		padding-top: 22px;
+
+		border-top: 1px solid var(--color-border);
+	}
+
+	.news-card__highlight > span {
+		flex: 0 0 auto;
+
+		width: 9px;
+		height: 9px;
+
+		margin-top: 6px;
+
+		border-radius: 50%;
+
+		background: var(--color-yellow);
+	}
+
+	.news-card__highlight p {
+		margin: 0;
+
+		color: var(--color-navy);
+
+		font-size: 14px;
+		font-weight: 650;
+		line-height: 1.5;
+	}
+
+	.news-card__footer {
+		margin-top: auto;
+		padding-top: 34px;
+	}
+
+	.news-card__read {
+		display: inline-flex;
+		align-items: center;
+		gap: 14px;
+
+		color: rgba(13, 22, 38, 0.45);
+
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	.news-card__read svg {
+		width: 21px;
+		height: 21px;
+
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.8;
+
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+
+	/* ==================================================
+	   RESPONSIVE FOUNDATION
+	   ================================================== */
+
+	@media (max-width: 1000px) {
+		.news-card {
+			grid-template-columns: 1fr;
+		}
+
+		.news-card__media {
+			aspect-ratio: 16 / 9;
+		}
+	}
+
+	@media (max-width: 780px) {
+		.news-hero {
+			padding: 78px 0 65px;
+		}
+
+		.news-hero__inner,
+		.news-feed__inner {
+			width: min(calc(100% - 32px), var(--container));
+		}
+
+		.news-hero__inner {
+			grid-template-columns: 1fr;
+			gap: 28px;
+		}
+
+		.news-hero h1 {
+			font-size: clamp(62px, 18vw, 92px);
+		}
+
+		.news-hero__intro {
+			margin-left: 0;
+			font-size: 17px;
+		}
+
+		.news-card {
+			min-height: 0;
+			border-radius: 23px;
+		}
+
+		.news-card__content {
+			padding: 30px 25px 28px;
+		}
+
+		.news-card h2 {
+			font-size: 38px;
+		}
+	}
+</style>

@@ -1,0 +1,563 @@
+---
+const projects = [
+	{
+		number: '01',
+        sortDate: 20260416,
+		date: '16 квітня',
+		category: 'Освітній захід',
+		title: 'Ековоркшоп',
+		description:
+			'Освітній ековоркшоп для учнів Деснянського району, проведений спільно з Київським молодіжним центром. Учасники дізналися більше про екосвідомість та дали старим речам нове життя.',
+		highlight: null,
+
+		// Коли буде фото:
+		// image: '/images/projects/ekovorkshop.jpg',
+		image: '/images/projects/eco.jpg',
+
+		imageAlt: 'Освітній захід «Ековоркшоп»',
+
+		// Додамо після створення окремої сторінки проєкту:
+		href: null,
+	},
+
+	{
+		number: '02',
+        sortDate: 20260426,
+		date: '26 квітня',
+		category: 'Творчий благодійний захід',
+		title: 'ULKбачення 2.0',
+		description:
+			'Музичний лідерський захід, що об’єднав райони УЛК у творчому змаганні з авторськими переспівами відомих пісень про лідерство.',
+		highlight: '28 084 грн зібрано на потреби протиповітряної оборони',
+
+		// Коли буде фото:
+		// image: '/images/projects/ulkbachennia.jpg',
+		image: '/images/projects/ulk.jpg',
+
+		imageAlt: 'Захід «ULKбачення 2.0»',
+
+		// Додамо після створення окремої сторінки проєкту:
+		href: null,
+	},
+].sort((a, b) => b.sortDate - a.sortDate);
+---
+
+<section class="projects" id="projects">
+	<div class="projects__inner">
+
+		<header class="projects__header">
+			<div class="projects__heading">
+				<p class="projects__label">Ініціативи та події</p>
+
+				<h2>
+					Наші
+					<span>проєкти</span>
+				</h2>
+			</div>
+
+			<p class="projects__intro">
+				Ініціативи, події та традиції, які об’єднують лідерів
+				учнівського самоврядування Деснянського району.
+			</p>
+		</header>
+
+		<div class="projects__grid">
+			{
+				projects.map((project, index) => (
+					<article class="project-card">
+
+						<div class="project-card__media">
+							{
+								project.image ? (
+									<img
+										src={project.image}
+										alt={project.imageAlt}
+										loading="lazy"
+									/>
+								) : (
+									<div class="project-card__placeholder">
+										<div class="project-card__placeholder-mark">
+	                            <span>{String(index + 1).padStart(2, '0')}</span>
+                                    </div>
+
+										<p>Фото проєкту</p>
+									</div>
+								)
+							}
+
+							<div class="project-card__media-top">
+								<span class="project-card__category">
+									{project.category}
+								</span>
+
+								<span class="project-card__number">
+									{String(index + 1).padStart(2, '0')}
+								</span>
+							</div>
+						</div>
+
+						<div class="project-card__body">
+
+							<div class="project-card__meta">
+								<time>{project.date}</time>
+							</div>
+
+							<h3>{project.title}</h3>
+
+							<p class="project-card__description">
+								{project.description}
+							</p>
+
+							{
+								project.highlight && (
+									<p class="project-card__highlight">
+										<span class="project-card__highlight-mark"></span>
+										{project.highlight}
+									</p>
+								)
+							}
+
+							<div class="project-card__footer">
+								{
+									project.href ? (
+										<a
+											class="project-card__more"
+											href={project.href}
+											aria-label={`Детальніше про проєкт «${project.title}»`}
+										>
+											<span>Детальніше</span>
+											<svg
+												viewBox="0 0 24 24"
+												aria-hidden="true"
+											>
+												<path d="M5 12h13M13 6l6 6-6 6" />
+											</svg>
+										</a>
+									) : (
+										<span
+											class="project-card__more project-card__more--inactive"
+											aria-hidden="true"
+										>
+											<span>Детальніше</span>
+											<svg viewBox="0 0 24 24">
+												<path d="M5 12h13M13 6l6 6-6 6" />
+											</svg>
+										</span>
+									)
+								}
+							</div>
+
+						</div>
+					</article>
+				))
+			}
+		</div>
+
+	</div>
+</section>
+
+<style>
+	.projects {
+		position: relative;
+		padding: 60px 0 135px;
+		background:
+			linear-gradient(
+				180deg,
+				#f7f8fb 0%,
+				#ffffff 46%,
+				#f8f9fc 100%
+			);
+		overflow: hidden;
+	}
+
+	.projects::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: min(calc(100% - 48px), var(--container));
+		height: 1px;
+		background: var(--color-border);
+		transform: translateX(-50%);
+	}
+
+	.projects__inner {
+		width: min(calc(100% - 48px), var(--container));
+		margin: 0 auto;
+	}
+
+	/* ---------- HEADER ---------- */
+
+	.projects__header {
+		display: grid;
+		grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.7fr);
+		gap: 90px;
+		align-items: end;
+		margin-bottom: 72px;
+	}
+
+	.projects__label {
+		margin: 0 0 12px;
+		color: var(--color-blue);
+		font-size: 13px;
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: 0.13em;
+		text-transform: uppercase;
+	}
+
+	.projects__heading h2 {
+		max-width: 760px;
+		margin: 0;
+		color: var(--color-navy);
+		font-size: clamp(64px, 6.1vw, 112px);
+		font-weight: 650;
+		line-height: 0.88;
+		letter-spacing: -0.06em;
+	}
+
+	.projects__heading h2 span {
+		display: block;
+		margin-top: 10px;
+		color: var(--color-blue);
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	.projects__intro {
+		max-width: 520px;
+		margin: 0 0 7px auto;
+		color: var(--color-muted);
+		font-size: 20px;
+		line-height: 1.65;
+	}
+
+	/* ---------- GRID ---------- */
+
+	.projects__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 30px;
+	}
+
+	/* ---------- CARD ---------- */
+
+	.project-card {
+		min-width: 0;
+		background: #ffffff;
+		border: 1px solid var(--color-border);
+		border-radius: 28px;
+		overflow: hidden;
+
+		box-shadow:
+			0 1px 2px rgba(13, 22, 38, 0.015),
+			0 12px 35px rgba(13, 22, 38, 0.035);
+
+		transition:
+			transform 300ms ease,
+			box-shadow 300ms ease,
+			border-color 300ms ease;
+	}
+
+	.project-card:hover {
+		transform: translateY(-6px);
+		border-color: rgba(36, 87, 230, 0.18);
+
+		box-shadow:
+			0 2px 4px rgba(13, 22, 38, 0.02),
+			0 22px 55px rgba(13, 22, 38, 0.075);
+	}
+
+	/* ---------- PHOTO ---------- */
+
+	.project-card__media {
+		position: relative;
+		aspect-ratio: 16 / 10;
+		background:
+			linear-gradient(
+				145deg,
+				#edf1fb 0%,
+				#e4eaf9 60%,
+				#f8f4dc 140%
+			);
+		overflow: hidden;
+	}
+
+	.project-card__media img {
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover;
+		object-position: center;
+
+		transition: transform 700ms cubic-bezier(.2, .7, .2, 1);
+	}
+
+	.project-card:hover .project-card__media img {
+		transform: scale(1.035);
+	}
+
+	.project-card__media::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+
+		background:
+			linear-gradient(
+				180deg,
+				rgba(9, 19, 38, 0.17) 0%,
+				transparent 30%,
+				transparent 100%
+			);
+	}
+
+	.project-card__media-top {
+		position: absolute;
+		z-index: 2;
+		top: 24px;
+		left: 24px;
+		right: 24px;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	.project-card__category {
+		display: inline-flex;
+		align-items: center;
+		min-height: 35px;
+		padding: 0 14px;
+
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(255, 255, 255, 0.65);
+		border-radius: 999px;
+
+		color: var(--color-navy);
+		font-size: 12px;
+		font-weight: 650;
+		letter-spacing: 0.035em;
+
+		backdrop-filter: blur(10px);
+	}
+
+	.project-card__number {
+		color: rgba(255, 255, 255, 0.94);
+		font-size: 13px;
+		font-weight: 750;
+		letter-spacing: 0.08em;
+	}
+
+	/* ---------- PLACEHOLDER BEFORE PHOTOS ---------- */
+
+	.project-card__placeholder {
+		position: absolute;
+		inset: 0;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 14px;
+
+		color: rgba(13, 22, 38, 0.45);
+	}
+
+	.project-card__placeholder-mark {
+		display: grid;
+		place-items: center;
+		width: 76px;
+		height: 76px;
+
+		border: 1px solid rgba(13, 22, 38, 0.1);
+		border-radius: 22px;
+		background: rgba(255, 255, 255, 0.32);
+	}
+
+	.project-card__placeholder-mark span {
+		color: rgba(13, 22, 38, 0.3);
+		font-size: 15px;
+		font-weight: 750;
+		letter-spacing: 0.09em;
+	}
+
+	.project-card__placeholder p {
+		margin: 0;
+		font-size: 13px;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	/* ---------- CONTENT ---------- */
+
+	.project-card__body {
+		display: flex;
+		flex-direction: column;
+		min-height: 355px;
+		padding: 31px 34px 30px;
+	}
+
+	.project-card__meta {
+		margin-bottom: 12px;
+	}
+
+	.project-card__meta time {
+		color: var(--color-blue);
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+	}
+
+	.project-card h3 {
+		margin: 0;
+		color: var(--color-navy);
+		font-size: clamp(28px, 2.15vw, 40px);
+		font-weight: 650;
+		line-height: 1.06;
+		letter-spacing: -0.035em;
+	}
+
+	.project-card__description {
+		max-width: 650px;
+		margin: 18px 0 0;
+		color: var(--color-muted);
+		font-size: 16px;
+		line-height: 1.7;
+	}
+
+	/* ---------- RESULT / STAT ---------- */
+
+	.project-card__highlight {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		margin: 22px 0 0;
+		color: var(--color-navy);
+		font-size: 14px;
+		font-weight: 650;
+		line-height: 1.45;
+	}
+
+	.project-card__highlight-mark {
+		flex: 0 0 auto;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: var(--color-yellow);
+	}
+
+	/* ---------- DETAILS ---------- */
+
+	.project-card__footer {
+		margin-top: auto;
+		padding-top: 27px;
+	}
+
+	.project-card__more {
+		display: inline-flex;
+		align-items: center;
+		gap: 15px;
+
+		color: var(--color-navy);
+		font-size: 14px;
+		font-weight: 700;
+		text-decoration: none;
+
+		transition: color 180ms ease;
+	}
+
+	.project-card__more svg {
+		width: 21px;
+		height: 21px;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.8;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+
+		transition: transform 220ms ease;
+	}
+
+	.project-card__more:hover {
+		color: var(--color-blue);
+	}
+
+	.project-card__more:hover svg {
+		transform: translateX(6px);
+	}
+
+	/*
+	 * Поки окремих сторінок проєктів немає,
+	 * "Детальніше" виглядає готовим,
+	 * але не є фальшивим посиланням.
+	 */
+	.project-card__more--inactive {
+		opacity: 0.42;
+		cursor: default;
+	}
+
+	/* ---------- BASIC RESPONSIVE FOUNDATION ---------- */
+
+	@media (max-width: 1050px) {
+		.projects__header {
+			grid-template-columns: 1fr 0.75fr;
+			gap: 50px;
+		}
+
+		.project-card__body {
+			padding: 28px;
+		}
+	}
+
+	@media (max-width: 780px) {
+		.projects {
+			padding: 85px 0 95px;
+		}
+
+		.projects__inner {
+			width: min(calc(100% - 32px), var(--container));
+		}
+
+		.projects__header {
+			grid-template-columns: 1fr;
+			gap: 28px;
+			margin-bottom: 46px;
+		}
+
+		.projects__heading h2 {
+			font-size: clamp(56px, 16vw, 82px);
+		}
+
+		.projects__intro {
+			margin-left: 0;
+			font-size: 17px;
+		}
+
+		.projects__grid {
+			grid-template-columns: 1fr;
+			gap: 22px;
+		}
+
+		.project-card {
+			border-radius: 22px;
+		}
+
+		.project-card__media {
+			aspect-ratio: 4 / 3;
+		}
+
+		.project-card__body {
+			min-height: 0;
+			padding: 26px 24px 25px;
+		}
+
+		.project-card h3 {
+			font-size: 31px;
+		}
+	}
+</style>

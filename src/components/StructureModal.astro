@@ -1,0 +1,916 @@
+<dialog class="structure-modal" id="structureModal">
+	<div class="structure-modal__shell">
+		<button
+			class="structure-modal__close"
+			type="button"
+			aria-label="Закрити"
+			data-modal-close
+		>
+			<span></span>
+			<span></span>
+		</button>
+
+		<div class="structure-modal__content" data-modal-content></div>
+	</div>
+</dialog>
+
+
+<!-- 01 PRESIDENT -->
+<template data-structure-template="01">
+	<div class="profile">
+		<div class="profile__photo">
+			<img
+				src="/images/team/president.jpg"
+            	alt="Президент РЛУС «Десна»"
+				data-modal-image
+			/>
+
+			<div class="profile__photo-fallback">
+				<span>Фото</span>
+			</div>
+		</div>
+
+		<div class="profile__content">
+			<p class="modal-label">Президія</p>
+
+			<h2>Президент</h2>
+
+			<div class="profile__person_name">
+			
+				Лігус Олексій
+			
+			</div>
+
+			<div class="profile__divider"></div>
+
+			<p class="profile__description">
+				Очолює РЛУС, представляє її інтереси, координує роботу
+				Віцепрезидента, Секретаря, Директорів секторів та членів
+				РЛУС, формує порядок денний і проводить збори.
+			</p>
+		</div>
+	</div>
+</template>
+
+
+<!-- 02 VICE PRESIDENT -->
+<template data-structure-template="02">
+	<div class="profile">
+		<div class="profile__photo">
+			<img
+				src="/images/team/vice-president.jpg"
+				alt="Віцепрезидент РЛУС «Десна»"
+				data-modal-image
+			/>
+
+			<div class="profile__photo-fallback">
+				<span>Фото</span>
+			</div>
+		</div>
+
+		<div class="profile__content">
+			<p class="modal-label">Президія</p>
+
+			<h2>Віцепрезидент</h2>
+
+			<div class="profile__person_name">
+			
+				Юшко Вікторія
+			
+			</div>
+
+			<div class="profile__divider"></div>
+
+			<p class="profile__description">
+				Є головним радником Президента, має рівні з ним права
+				та виконує його розпорядження й обов’язки у випадках,
+				визначених Статутом.
+			</p>
+		</div>
+	</div>
+</template>
+
+
+<!-- 03 SECRETARY -->
+<template data-structure-template="03">
+	<div class="profile">
+		<div class="profile__photo">
+			<img
+				src="/images/team/secretary.jpg"
+				alt="Секретар РЛУС «Десна»"
+				data-modal-image
+			/>
+
+			<div class="profile__photo-fallback">
+				<span>Фото</span>
+			</div>
+		</div>
+
+		<div class="profile__content">
+			<p class="modal-label">Директорат</p>
+
+			<h2>Секретар</h2>
+
+			<div class="profile__person_name">
+			
+				Можаєва Варвара
+			
+			</div>
+
+			<div class="profile__divider"></div>
+
+			<p class="profile__description">
+				Веде облік активності, допомагає в організації внутрішньої
+				роботи, за потреби готує стислий підсумок зборів та здійснює
+				пряму комунікацію з Куратором.
+			</p>
+		</div>
+	</div>
+</template>
+
+
+<!-- 04 DIRECTORS -->
+<template data-structure-template="04">
+	<div class="directors">
+	<div class="directors__header">
+		<div class="directors__heading">
+			<p class="modal-label">Директорат</p>
+
+			<h2>
+				Директори
+				<span>секторів</span>
+			</h2>
+		</div>
+
+		<p class="directors__description">
+			Координують та організовують роботу своїх секторів,
+			планують діяльність і звітують про виконану роботу.
+		</p>
+	</div>
+
+		<div class="directors__grid">
+			<article class="director-card">
+				<div class="director-card__photo">
+					<img
+						src="/images/team/financial-director.jpg"
+						alt="Директор Фінансового сектору"
+						data-modal-image
+					/>
+
+					<div class="profile__photo-fallback">
+						<span>Фото</span>
+					</div>
+				</div>
+
+				<p class="director-card__sector">
+					Фінансовий директор
+				</p>
+
+				<h3>Бондаренко Ольга</h3>
+			</article>
+
+
+			<article class="director-card">
+				<div class="director-card__photo">
+					<img
+						src="/images/team/smm-director.jpg"
+						alt="Директор SMM-сектору"
+						data-modal-image
+					/>
+
+					<div class="profile__photo-fallback">
+						<span>Фото</span>
+					</div>
+				</div>
+
+				<p class="director-card__sector">
+					SMM-директор
+				</p>
+
+				<h3>Гілевич Єлизавета</h3>
+			</article>
+
+
+			<article class="director-card">
+				<div class="director-card__photo">
+					<img
+						src="/images/team/tiktok-director.jpg"
+						alt="Директор TikTok-сектору"
+						data-modal-image
+					/>
+
+					<div class="profile__photo-fallback">
+						<span>Фото</span>
+					</div>
+				</div>
+
+				<p class="director-card__sector">
+					TikTok-директор
+				</p>
+
+				<h3>Прус Олександра</h3>
+			</article>
+		</div>
+	</div>
+</template>
+
+
+<!-- 05 DEPUTY DIRECTORS -->
+<template data-structure-template="05">
+	<div class="simple-modal">
+		<p class="modal-label">Структура</p>
+
+		<h2>
+			Заступники
+			<span>Директорів</span>
+		</h2>
+
+		<p class="simple-modal__lead">
+			Допомагають Директорам секторів, виконують доручені завдання
+			та за визначених Статутом умов можуть тимчасово виконувати
+			обов’язки Директора.
+		</p>
+
+		<div class="simple-modal__notice">
+			<span></span>
+
+			<p>
+				Персональний склад додамо після погодження.
+			</p>
+		</div>
+	</div>
+</template>
+
+
+<!-- 06 TEAM -->
+<template data-structure-template="06">
+	<div class="team-modal">
+		<div class="team-modal__photo">
+			<img
+				src="/images/team/team.jpg"
+				alt="Команда РЛУС «Десна»"
+				data-modal-image
+			/>
+
+			<div class="profile__photo-fallback">
+				<span>Спільне фото команди</span>
+			</div>
+		</div>
+
+		<div class="team-modal__content">
+			<p class="modal-label">Спільнота</p>
+
+			<h2>
+				Команда
+				<span>РЛУС «Десна»</span>
+			</h2>
+
+			<p class="team-modal__description">
+				РЛУС об’єднує активну учнівську молодь закладів освіти
+				Деснянського району міста Києва.
+			</p>
+
+			<div class="team-modal__stats">
+				<div>
+					<strong>—</strong>
+					<span>членів РЛУС</span>
+				</div>
+
+				<div>
+					<strong>—</strong>
+					<span>закладів освіти</span>
+				</div>
+			</div>
+
+			<p class="team-modal__note">
+				Актуальні цифри додамо після підтвердження.
+			</p>
+		</div>
+	</div>
+</template>
+
+
+<script>
+	const modal =
+		document.querySelector<HTMLDialogElement>('#structureModal');
+
+	const modalContent =
+		modal?.querySelector<HTMLElement>('[data-modal-content]');
+
+	const closeButton =
+		modal?.querySelector<HTMLButtonElement>('[data-modal-close]');
+
+	const openButtons =
+		document.querySelectorAll<HTMLButtonElement>(
+			'[data-structure-modal]'
+		);
+
+	function prepareImages(root: HTMLElement) {
+		const images =
+			root.querySelectorAll<HTMLImageElement>(
+				'[data-modal-image]'
+			);
+
+		images.forEach((image) => {
+			const wrapper =
+				image.closest<HTMLElement>(
+					'.profile__photo, .director-card__photo, .team-modal__photo'
+				);
+
+			const markMissing = () => {
+				wrapper?.classList.add('is-missing');
+			};
+
+			image.addEventListener(
+				'error',
+				markMissing,
+				{ once: true }
+			);
+
+			if (
+				image.complete &&
+				image.naturalWidth === 0
+			) {
+				markMissing();
+			}
+		});
+	}
+
+	function closeModal() {
+	if (!modal?.open) {
+		return;
+	}
+
+	modal.classList.remove('is-open');
+
+	window.setTimeout(() => {
+		modal.close();
+
+		document.body.classList.remove(
+			'structure-modal-open'
+		);
+	}, 300);
+}
+
+	openButtons.forEach((button) => {
+		button.addEventListener('click', () => {
+			const key =
+				button.dataset.structureModal;
+
+			if (
+				!key ||
+				!modal ||
+				!modalContent
+			) {
+				return;
+			}
+
+			const template =
+				document.querySelector<HTMLTemplateElement>(
+					`template[data-structure-template="${key}"]`
+				);
+
+			if (!template) {
+				return;
+			}
+
+			modalContent.replaceChildren(
+				template.content.cloneNode(true)
+			);
+
+			prepareImages(modalContent);
+
+			modal.showModal();
+
+requestAnimationFrame(() => {
+	modal.classList.add('is-open');
+});
+
+document.body.classList.add(
+	'structure-modal-open'
+);
+		});
+	});
+
+	closeButton?.addEventListener(
+		'click',
+		closeModal
+	);
+
+	modal?.addEventListener(
+		'click',
+		(event: MouseEvent) => {
+			if (event.target === modal) {
+				closeModal();
+			}
+		}
+	);
+
+	modal?.addEventListener(
+		'close',
+		() => {
+			document.body.classList.remove(
+				'structure-modal-open'
+			);
+		}
+	);
+</script>
+
+
+<style>
+	.structure-modal {
+		width: min(1100px, calc(100% - 40px));
+		max-height: calc(100vh - 50px);
+
+		margin: auto;
+		padding: 0;
+
+		border: 0;
+		border-radius: 30px;
+
+		background: #ffffff;
+
+		overflow: auto;
+
+        opacity: 0;
+transform: translateY(24px) scale(0.97);
+
+transition:
+	opacity 320ms ease,
+	transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+
+		box-shadow:
+			0 40px 100px rgba(5, 12, 25, 0.28);
+            
+	}
+
+    .structure-modal.is-open {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
+	.structure-modal::backdrop {
+	background: rgba(4, 11, 23, 0);
+	backdrop-filter: blur(0);
+
+	transition:
+		background 320ms ease,
+		backdrop-filter 320ms ease;
+}
+
+.structure-modal.is-open::backdrop {
+	background: rgba(4, 11, 23, 0.72);
+	backdrop-filter: blur(8px);
+}
+
+	.structure-modal__shell {
+		position: relative;
+	}
+
+	.structure-modal__close {
+		position: absolute;
+		z-index: 20;
+
+		top: 24px;
+		right: 24px;
+
+		width: 48px;
+		height: 48px;
+
+		border: 1px solid rgba(13, 22, 38, 0.1);
+		border-radius: 50%;
+
+		background: rgba(255, 255, 255, 0.92);
+
+		cursor: pointer;
+	}
+
+	.structure-modal__close span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		width: 18px;
+		height: 1.5px;
+
+		background: var(--color-navy);
+	}
+
+	.structure-modal__close span:first-child {
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	.structure-modal__close span:last-child {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+
+	.structure-modal__content {
+		min-height: 580px;
+	}
+
+	.modal-label {
+		margin: 0 0 22px;
+
+		color: var(--color-blue);
+
+		font-size: 11px;
+		font-weight: 800;
+
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	/* PERSON */
+
+	.profile {
+		display: grid;
+		grid-template-columns: 0.92fr 1.08fr;
+
+		min-height: 620px;
+	}
+
+	.profile__photo {
+		position: relative;
+
+		min-height: 620px;
+
+		background:
+			linear-gradient(
+				145deg,
+				#f6f7fa,
+				#e8edfb
+			);
+
+		overflow: hidden;
+	}
+
+	.profile__photo img,
+	.director-card__photo img,
+	.team-modal__photo img {
+		width: 100%;
+		height: 620px;
+
+		display: block;
+		object-fit: cover;
+	}
+
+    .director-card__photo img {
+	width: 100%;
+	height: 100%;
+	display: block;
+
+	object-fit: cover;
+	object-position: center 20%;
+    }
+
+	.profile__photo-fallback {
+		position: absolute;
+		inset: 0;
+
+		display: none;
+		place-items: center;
+
+		background:
+			linear-gradient(
+				145deg,
+				#f7f8fb 0%,
+				#e8edfb 100%
+			);
+
+		color: #969da9;
+
+		font-size: 13px;
+		font-weight: 700;
+
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.is-missing img {
+		display: none;
+	}
+
+	.is-missing .profile__photo-fallback {
+		display: grid;
+	}
+
+	.profile__content {
+		padding: 85px 70px 65px;
+	}
+
+	.profile__content h2,
+	.directors__header h2,
+	.simple-modal h2,
+	.team-modal h2 {
+		margin: 0;
+
+		color: var(--color-navy);
+
+		font-size: clamp(48px, 5vw, 78px);
+		font-weight: 750;
+
+		line-height: 0.98;
+		letter-spacing: -0.055em;
+	}
+
+	.profile__person {
+		margin-top: 52px;
+	}
+
+	.profile__person h3 {
+		margin: 0;
+
+		color: var(--color-navy);
+
+		font-size: 26px;
+		font-weight: 700;
+	}
+
+	.profile__person p {
+		margin: 8px 0 0;
+
+		color: var(--color-blue);
+
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.profile__divider {
+		height: 1px;
+
+		margin: 34px 0;
+
+		background: var(--color-border);
+	}
+
+	.profile__description {
+		max-width: 550px;
+
+		margin: 0;
+
+		color: var(--color-muted);
+
+		font-size: 17px;
+		line-height: 1.72;
+	}
+
+	/* DIRECTORS */
+
+	.directors {
+	padding: 36px 65px 28px;
+    }
+
+	.directors__header {
+	display: grid;
+	grid-template-columns: 1.05fr 0.95fr;
+	gap: 70px;
+	align-items: end;
+}
+
+    .profile__person_name {
+        color: var(--color-blue);
+        margin: 28px 0 0;
+        font-size: 30px;
+		font-weight: 700;
+		font-style: italic;  
+    }
+
+	.directors__header h2 span,
+	.simple-modal h2 span,
+	.team-modal h2 span {
+		display: block;
+
+		color: var(--color-blue);
+
+		font-weight: 450;
+		font-style: italic;
+	}
+    .directors__description {
+	max-width: 440px;
+
+	margin: 0 0 8px auto;
+
+	color: var(--color-muted);
+
+	font-size: 17px;
+	line-height: 1.7;
+    }
+
+	.directors__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 18px;
+
+	margin-top: 18px;
+    }
+
+	.director-card {
+		padding: 16px 16px 24px;
+
+		border: 1px solid var(--color-border);
+		border-radius: 24px;
+
+		background: #f8f9fb;
+	}
+
+	.director-card__photo {
+	position: relative;
+
+	width: 100%;
+	height: clamp(210px, 22vw, 255px);
+
+	border-radius: 18px;
+
+	background: #eef1f8;
+
+	overflow: hidden;
+}
+
+	.director-card__sector {
+		margin: 22px 4px 0;
+
+		color: var(--color-blue);
+
+		font-size: 11px;
+		font-weight: 800;
+
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	.director-card h3 {
+		margin: 8px 4px 0;
+
+		color: var(--color-navy);
+
+		font-size: 20px;
+		font-weight: 700;
+	}
+
+	/* SIMPLE MODAL */
+
+	.simple-modal {
+		min-height: 590px;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		padding: 80px;
+	}
+
+	.simple-modal__lead {
+		max-width: 690px;
+
+		margin: 40px 0 0;
+
+		color: var(--color-muted);
+
+		font-size: 19px;
+		line-height: 1.7;
+	}
+
+	.simple-modal__notice {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+
+		margin-top: 55px;
+	}
+
+	.simple-modal__notice span {
+		width: 9px;
+		height: 9px;
+
+		border-radius: 50%;
+
+		background: var(--color-yellow);
+	}
+
+	.simple-modal__notice p {
+		margin: 0;
+
+		color: var(--color-muted);
+		font-size: 14px;
+	}
+
+	/* TEAM */
+
+	.team-modal {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+
+	min-height: 560px;
+    }
+
+	.team-modal__photo {
+	position: relative;
+
+	min-height: 560px;
+
+	background: #eef1f8;
+
+	overflow: hidden;
+    }
+
+	.team-modal__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	padding: 48px 60px;
+    }
+
+	.team-modal__description {
+		margin: 32px 0 0;
+
+		color: var(--color-muted);
+
+		font-size: 17px;
+		line-height: 1.7;
+	}
+
+	.team-modal__stats {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+
+		gap: 15px;
+
+		margin-top: 32px;
+	}
+
+	.team-modal__stats div {
+		padding: 25px;
+
+		border-radius: 20px;
+
+		background:
+			linear-gradient(
+				145deg,
+				#ffffff 0%,
+				#edf1fd 100%
+			);
+	}
+
+	.team-modal__stats strong {
+		display: block;
+
+		color: var(--color-navy);
+
+		font-size: 42px;
+		font-weight: 750;
+	}
+
+	.team-modal__stats span {
+		display: block;
+
+		margin-top: 3px;
+
+		color: var(--color-muted);
+
+		font-size: 13px;
+	}
+
+	.team-modal__note {
+		margin: 12px 0 0;
+
+		color: #9ca1aa;
+
+		font-size: 12px;
+	}
+
+	@media (max-width: 780px) {
+		.structure-modal {
+			width: calc(100% - 24px);
+			border-radius: 22px;
+		}
+
+		.profile,
+		.team-modal {
+			grid-template-columns: 1fr;
+		}
+
+		.profile__photo,
+		.team-modal__photo {
+			min-height: 420px;
+		}
+
+		.profile__content,
+		.team-modal__content {
+			padding: 55px 30px;
+		}
+
+		.directors {
+			padding: 65px 28px 35px;
+		}
+
+		.directors__grid {
+			grid-template-columns: 1fr;
+		}
+
+		.simple-modal {
+			min-height: 520px;
+			padding: 65px 30px;
+		}
+	}
+</style>
