@@ -21,7 +21,7 @@
 		<div class="profile__photo">
 			<img
 				src="/images/team/president.jpg"
-            	alt="Президент РЛУС «Десна»"
+				alt="Президент РЛУС «Десна»"
 				data-modal-image
 			/>
 
@@ -36,9 +36,15 @@
 			<h2>Президент</h2>
 
 			<div class="profile__person_name">
-			
 				Лігус Олексій
-			
+			</div>
+
+			<div class="profile__details">
+				<p>
+					Учень 11-А класу школи І–ІІІ ступенів №270
+				</p>
+
+				<span>В. о. президента школи</span>
 			</div>
 
 			<div class="profile__divider"></div>
@@ -74,9 +80,14 @@
 			<h2>Віцепрезидент</h2>
 
 			<div class="profile__person_name">
-			
 				Юшко Вікторія
-			
+			</div>
+
+			<div class="profile__details">
+				<p>
+					Учениця 7(11)Б класу гімназії ІІ–ІІІ ступеня
+					«Києво-Могилянський колегіум»
+				</p>
 			</div>
 
 			<div class="profile__divider"></div>
@@ -89,7 +100,6 @@
 		</div>
 	</div>
 </template>
-
 
 <!-- 03 SECRETARY -->
 <template data-structure-template="03">
@@ -117,6 +127,15 @@
 			
 			</div>
 
+			<div class="profile__details">
+	<p>
+		Учениця 11-В класу Ліцею №39 імені гетьмана України
+		Богдана Хмельницького
+	</p>
+
+	<span>Президент ліцею</span>
+</div>
+
 			<div class="profile__divider"></div>
 
 			<p class="profile__description">
@@ -132,23 +151,27 @@
 <!-- 04 DIRECTORS -->
 <template data-structure-template="04">
 	<div class="directors">
-	<div class="directors__header">
-		<div class="directors__heading">
-			<p class="modal-label">Директорат</p>
 
-			<h2>
-				Директори
-				<span>секторів</span>
-			</h2>
+		<div class="directors__header">
+			<div class="directors__heading">
+				<p class="modal-label">Директорат</p>
+
+				<h2>
+					Директори
+					<span>секторів</span>
+				</h2>
+			</div>
+
+			<p class="directors__description">
+				Координують та організовують роботу своїх секторів,
+				планують діяльність і звітують про виконану роботу.
+			</p>
 		</div>
 
-		<p class="directors__description">
-			Координують та організовують роботу своїх секторів,
-			планують діяльність і звітують про виконану роботу.
-		</p>
-	</div>
 
 		<div class="directors__grid">
+
+			<!-- ФІНАНСОВИЙ ДИРЕКТОР -->
 			<article class="director-card">
 				<div class="director-card__photo">
 					<img
@@ -167,9 +190,17 @@
 				</p>
 
 				<h3>Бондаренко Ольга</h3>
+
+				<div class="director-card__details">
+					<p>
+						Учениця 11-Б класу Ліцею із поглибленим
+						вивченням природничих наук №307
+					</p>
+				</div>
 			</article>
 
 
+			<!-- SMM-ДИРЕКТОР -->
 			<article class="director-card">
 				<div class="director-card__photo">
 					<img
@@ -188,9 +219,18 @@
 				</p>
 
 				<h3>Гілевич Єлизавета</h3>
+
+				<div class="director-card__details">
+					<p>
+						Учениця 11-А класу школи І–ІІІ ступенів №282
+					</p>
+
+					<span>Президент школи</span>
+				</div>
 			</article>
 
 
+			<!-- TIKTOK-ДИРЕКТОР -->
 			<article class="director-card">
 				<div class="director-card__photo">
 					<img
@@ -209,7 +249,15 @@
 				</p>
 
 				<h3>Прус Олександра</h3>
+
+				<div class="director-card__details">
+					<p>
+						Учениця 7(11)-А класу гімназії ІІ–ІІІ ступеня
+						«Києво-Могилянський колегіум»
+					</p>
+				</div>
 			</article>
+
 		</div>
 	</div>
 </template>
@@ -747,6 +795,30 @@ transition:
 		font-weight: 700;
 	}
 
+.director-card__details {
+	margin: 10px 4px 0;
+}
+
+.director-card__details p {
+	margin: 0;
+
+	color: var(--color-muted);
+
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.director-card__details span {
+	display: inline-block;
+
+	margin-top: 7px;
+
+	color: var(--color-blue);
+
+	font-size: 11px;
+	font-weight: 700;
+}
+
 	/* SIMPLE MODAL */
 
 	.simple-modal {
@@ -967,5 +1039,27 @@ transition:
 		height: 100%;
 		object-fit: cover;
 	}
+}
+
+.profile__details {
+	margin-top: 14px;
+}
+
+.profile__details p {
+	max-width: 560px;
+	margin: 0;
+
+	color: var(--color-muted);
+	font-size: 15px;
+	line-height: 1.55;
+}
+
+.profile__details span {
+	display: inline-block;
+	margin-top: 7px;
+
+	color: var(--color-blue);
+	font-size: 13px;
+	font-weight: 650;
 }
 </style>
