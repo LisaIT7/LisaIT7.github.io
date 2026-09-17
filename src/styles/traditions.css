@@ -1,0 +1,1279 @@
+/* ========================================
+   TRADITIONS — SHARED
+   ======================================== */
+
+.traditions-page {
+	overflow: hidden;
+}
+
+.traditions-container {
+	width: min(calc(100% - 64px), var(--container));
+	margin-inline: auto;
+}
+
+.traditions-label,
+.traditions-kicker {
+	margin: 0;
+
+	color: var(--color-blue);
+
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
+.traditions-heading {
+	padding-bottom: 34px;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.traditions-heading > div {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(260px, 0.45fr);
+
+	gap: 72px;
+	align-items: end;
+
+	margin-top: 22px;
+}
+
+.traditions-heading h2,
+.hymn-heading h2,
+.ulk-heading h2 {
+	margin: 0;
+
+	color: var(--color-navy);
+
+	font-size: clamp(54px, 6.2vw, 96px);
+	font-weight: 700;
+	line-height: 0.9;
+	letter-spacing: -0.055em;
+}
+
+.traditions-heading h2 span,
+.hymn-heading h2 span,
+.ulk-heading h2 span {
+	display: block;
+
+	color: var(--color-blue);
+
+	font-weight: 450;
+	font-style: italic;
+}
+
+.traditions-heading > div > p {
+	max-width: 380px;
+	margin: 0 0 5px auto;
+
+	color: var(--color-muted);
+
+	font-size: 17px;
+	line-height: 1.65;
+}
+
+
+/* ========================================
+   HERO
+   ======================================== */
+
+.traditions-hero {
+	background: var(--color-navy);
+	color: #fff;
+}
+
+.traditions-hero__inner {
+	min-height: 440px;
+
+	padding-block: 44px 50px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.traditions-kicker {
+	color: rgba(255, 255, 255, 0.68);
+}
+
+.traditions-kicker::before {
+	content: '';
+
+	display: inline-block;
+
+	width: 28px;
+	height: 2px;
+
+	margin-right: 12px;
+	vertical-align: middle;
+
+	background: var(--color-yellow);
+}
+
+.traditions-hero__content {
+	display: grid;
+	grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.5fr);
+
+	gap: 72px;
+	align-items: end;
+}
+
+.traditions-hero h1 {
+	margin: 0;
+
+	font-size: clamp(82px, 10vw, 160px);
+	font-weight: 700;
+	line-height: 0.88;
+	letter-spacing: -0.025em;
+
+	font-kerning: normal;
+}
+
+.traditions-hero h1 span {
+	display: block;
+
+	color: var(--color-yellow);
+
+	font-weight: 450;
+	font-style: italic;
+
+	line-height: 0.9;
+	letter-spacing: -0.02em;
+
+	font-kerning: normal;
+}
+
+.traditions-hero__text {
+	padding-bottom: 4px;
+}
+
+.traditions-hero__text p {
+	margin: 0;
+
+	color: rgba(255, 255, 255, 0.76);
+
+	font-size: 18px;
+	line-height: 1.65;
+}
+
+.traditions-hero__text strong {
+	display: block;
+
+	margin-top: 30px;
+	padding-top: 18px;
+
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+	font-size: 19px;
+}
+/* ========================================
+   EVENTS
+   ======================================== */
+
+.traditions-section {
+	background: #ffffff;
+}
+
+.traditions-section .traditions-container {
+	padding-block: 110px 118px;
+}
+
+.events-list {
+	margin-top: 30px;
+	border-top: 1px solid var(--color-border);
+}
+
+
+/* ITEM */
+
+.event-item {
+	margin: 0;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.event-item > summary {
+	list-style: none;
+}
+
+.event-item > summary::-webkit-details-marker {
+	display: none;
+}
+
+.event-item > summary::marker {
+	content: '';
+}
+
+
+/* MAIN ROW */
+
+.event-row {
+	min-height: 96px;
+
+	display: grid;
+	grid-template-columns: 64px minmax(0, 1fr) 36px;
+	align-items: center;
+	gap: 18px;
+
+	padding: 0;
+
+	cursor: pointer;
+
+	transition:
+		background 180ms ease,
+		padding 180ms ease;
+}
+
+.event-row:hover,
+.event-item[open] > .event-row {
+	background: #f7f9fc;
+	padding-inline: 14px;
+}
+
+.event-row__number {
+	color: var(--color-blue);
+
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+}
+
+.event-row h3 {
+	margin: 0;
+
+	color: var(--color-navy);
+
+	font-size: clamp(27px, 3vw, 42px);
+	font-weight: 600;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+}
+
+.event-row__icon {
+	width: 34px;
+	height: 34px;
+
+	display: grid;
+	place-items: center;
+	justify-self: end;
+
+	border: 1px solid var(--color-border);
+	border-radius: 50%;
+
+	color: var(--color-blue);
+
+	font-size: 21px;
+	font-weight: 300;
+	line-height: 1;
+
+	transition:
+		transform 220ms ease,
+		background 180ms ease,
+		border-color 180ms ease,
+		color 180ms ease;
+}
+
+.event-item[open] .event-row__icon {
+	background: var(--color-blue);
+	border-color: var(--color-blue);
+	color: #ffffff;
+
+	transform: rotate(45deg);
+}
+
+
+/* OPEN CONTENT */
+
+.event-expand {
+	display: grid;
+	grid-template-rows: 0fr;
+
+	opacity: 0;
+
+	transition:
+		grid-template-rows 280ms ease,
+		opacity 200ms ease;
+}
+
+.event-item[open] .event-expand {
+	grid-template-rows: 1fr;
+	opacity: 1;
+}
+
+.event-expand__inner {
+	min-height: 0;
+	overflow: hidden;
+
+	display: grid;
+	grid-template-columns: 140px minmax(0, 1fr);
+	align-items: center;
+	gap: 24px;
+
+	max-width: 760px;
+}
+
+.event-item[open] .event-expand__inner {
+	padding: 4px 0 26px 64px;
+}
+
+
+/* SMALL PHOTO */
+
+.event-expand__media {
+	width: 140px;
+	height: 96px;
+
+	overflow: hidden;
+
+	border-radius: 12px;
+	background: #eef1f6;
+}
+
+.event-expand__media img {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+
+	opacity: 0;
+	transform: translateY(5px);
+
+	transition:
+		opacity 220ms ease,
+		transform 260ms ease;
+}
+
+.event-item[open] .event-expand__media img {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+
+/* DESCRIPTION */
+
+.event-expand__text {
+	max-width: 520px;
+}
+
+.event-expand__text p {
+	margin: 0;
+
+	color: var(--color-muted);
+
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+
+/* ========================================
+   BRANDBOOK
+   ======================================== */
+
+.brandbook-section {
+	background: #f3f5f8;
+}
+
+.brandbook-section .traditions-container {
+	padding-block: 110px 120px;
+}
+
+.brandbook-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	gap: 18px;
+
+	margin-top: 36px;
+}
+
+.brand-card {
+	position: relative;
+
+	min-height: 350px;
+
+	padding: 28px;
+
+	border-radius: 28px;
+
+	overflow: hidden;
+}
+
+.brand-card__header {
+	position: relative;
+	z-index: 2;
+
+	display: flex;
+	justify-content: space-between;
+
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+}
+
+.brand-card--logo {
+	background: #fff;
+
+	border: 1px solid var(--color-border);
+
+	color: var(--color-navy);
+}
+
+.brand-card__logo {
+	height: 270px;
+
+	display: grid;
+	place-items: center;
+}
+
+.brand-card__logo img {
+	display: block;
+
+	width: min(68%, 280px);
+	height: auto;
+}
+
+.brand-card--colors {
+	padding: 0;
+
+	background: #fff;
+
+	border: 1px solid var(--color-border);
+}
+
+.brand-card--colors .brand-card__header {
+	position: absolute;
+
+	top: 28px;
+	left: 28px;
+	right: 28px;
+
+	color: #fff;
+}
+
+.brand-colors {
+	height: 100%;
+	min-height: 350px;
+
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+}
+
+.brand-colors > div {
+	display: flex;
+	align-items: flex-end;
+
+	padding: 28px;
+
+	font-size: 27px;
+	font-weight: 700;
+	letter-spacing: -0.03em;
+}
+
+.brand-colors__blue {
+	background: var(--color-blue);
+	color: #fff;
+}
+
+.brand-colors__yellow {
+	background: var(--color-yellow);
+	color: var(--color-navy);
+}
+
+/* ========================================
+   POLO CARD
+   ======================================== */
+
+.brand-card--polo {
+	padding: 0;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	min-height: 350px;
+
+	background: #fff;
+
+	border: 1px solid var(--color-border);
+
+	color: var(--color-navy);
+}
+
+.polo-card__media {
+	min-width: 0;
+	overflow: hidden;
+
+	background: #eef1f6;
+}
+
+.polo-card__media img {
+	width: 100%;
+	height: 100%;
+
+	display: block;
+
+	object-fit: cover;
+	object-position: center;
+}
+
+.polo-card__content {
+	min-width: 0;
+
+	padding: 28px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.polo-card__text > span {
+	display: block;
+
+	margin-bottom: 9px;
+
+	color: var(--color-muted);
+
+	font-size: 13px;
+}
+
+.polo-card__text h3 {
+	margin: 0;
+
+	color: var(--color-navy);
+
+	font-size: clamp(30px, 3.4vw, 48px);
+	font-weight: 650;
+	line-height: 0.95;
+
+	letter-spacing: -0.045em;
+}
+
+
+/* ========================================
+   ANTHEM CARD
+   ======================================== */
+
+.brand-card--anthem {
+	min-height: 350px;
+
+	display: flex;
+	flex-direction: column;
+
+	background: var(--color-yellow);
+	color: var(--color-navy);
+}
+
+.anthem-card__header > span:first-child {
+	font-size: 18px;
+	letter-spacing: 0.09em;
+}
+
+.anthem-inline {
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+
+	margin-top: 42px;
+}
+
+.anthem-inline > summary {
+	display: flex;
+	flex-direction: column;
+
+	list-style: none;
+	cursor: pointer;
+}
+
+.anthem-inline > summary::-webkit-details-marker {
+	display: none;
+}
+
+.anthem-inline > summary::marker {
+	content: '';
+}
+
+.anthem-preview p {
+	margin: 0;
+
+	color: var(--color-navy);
+
+	font-size: 20px;
+	line-height: 1.55;
+}
+
+.anthem-action {
+	width: fit-content;
+
+	display: inline-flex;
+	align-items: center;
+
+	gap: 9px;
+
+	margin-top: 22px;
+	padding-bottom: 5px;
+
+	border-bottom: 1px solid rgba(13, 22, 38, 0.4);
+
+	color: var(--color-navy);
+
+	font-size: 13px;
+	font-weight: 750;
+}
+
+.anthem-action__close {
+	display: none;
+}
+
+.anthem-action__icon {
+	font-size: 18px;
+	font-weight: 400;
+
+	transition: transform 200ms ease;
+}
+
+
+/* OPEN ANTHEM */
+
+.anthem-inline[open] {
+	margin-top: 18px;
+}
+
+.anthem-inline[open] .anthem-preview {
+	display: none;
+}
+
+.anthem-inline[open] .anthem-action {
+	margin-top: 0;
+	margin-bottom: 12px;
+}
+
+.anthem-inline[open] .anthem-action__open {
+	display: none;
+}
+
+.anthem-inline[open] .anthem-action__close {
+	display: inline;
+}
+
+.anthem-inline[open] .anthem-action__icon {
+	transform: rotate(45deg);
+}
+
+
+/* LYRICS */
+
+.anthem-inline__lyrics {
+	max-height: 235px;
+
+	padding-right: 12px;
+
+	overflow-y: auto;
+
+	scrollbar-width: thin;
+}
+
+.anthem-inline__lyrics > p,
+.anthem-inline__chorus {
+	margin: 0;
+	padding: 12px 0;
+
+	border-top: 1px solid rgba(13, 22, 38, 0.12);
+
+	color: var(--color-navy);
+
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+.anthem-inline__chorus {
+	padding-left: 12px;
+
+	border-left: 3px solid rgba(13, 22, 38, 0.26);
+}
+
+.anthem-inline__chorus strong {
+	display: block;
+
+	margin-bottom: 7px;
+
+	font-size: 10px;
+	font-weight: 850;
+
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.anthem-inline__chorus p {
+	margin: 0;
+}
+
+/* ========================================
+   CHANT
+   ======================================== */
+
+.chant-section {
+	background: var(--color-blue);
+	color: #fff;
+}
+
+.chant-section .traditions-container {
+	padding-block: 96px 100px;
+}
+
+.traditions-label--yellow {
+	color: var(--color-yellow);
+}
+
+.chant-section blockquote {
+	max-width: 1080px;
+
+	margin: 44px 0 0;
+
+	font-size: clamp(38px, 5.2vw, 76px);
+	font-weight: 650;
+	line-height: 1.08;
+	letter-spacing: -0.045em;
+}
+
+.chant-footer {
+	margin-top: 60px;
+	padding-top: 20px;
+
+	display: flex;
+	justify-content: space-between;
+
+	border-top: 1px solid rgba(255, 255, 255, 0.23);
+
+	color: rgba(255, 255, 255, 0.7);
+
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
+
+/* ========================================
+   ULK
+   ======================================== */
+
+.ulk-section {
+	background: #fff;
+}
+
+.ulk-layout {
+	padding-block: 118px;
+
+	display: grid;
+	grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+
+	gap: 90px;
+}
+
+.ulk-heading h2 {
+	margin-top: 26px;
+}
+
+.ulk-content {
+	padding-top: 42px;
+}
+
+.ulk-intro {
+	max-width: 580px;
+
+	margin: 0 0 40px;
+
+	color: var(--color-muted);
+
+	font-size: 18px;
+	line-height: 1.7;
+}
+
+.ulk-item {
+	display: grid;
+	grid-template-columns: 54px 1fr;
+
+	gap: 22px;
+
+	padding: 28px 0;
+
+	border-top: 1px solid var(--color-border);
+}
+
+.ulk-item:last-child {
+	border-bottom: 1px solid var(--color-border);
+}
+
+.ulk-item > span {
+	padding-top: 2px;
+
+	color: var(--color-blue);
+
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+}
+
+.ulk-item small {
+	display: block;
+
+	margin-bottom: 12px;
+
+	color: var(--color-blue);
+
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+}
+
+.ulk-item p {
+	margin: 4px 0;
+
+	color: var(--color-navy);
+
+	font-size: 23px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.ulk-item em {
+	display: block;
+
+	margin-top: 12px;
+
+	color: var(--color-muted);
+
+	font-size: 13px;
+	font-style: normal;
+}
+
+.ulk-item .ulk-chant {
+	max-width: 650px;
+
+	font-size: 20px;
+}
+
+
+/* ========================================
+   FINAL
+   ======================================== */
+
+.traditions-final {
+	background: #f4f6f9;
+}
+
+.traditions-final__inner {
+	min-height: 560px;
+
+	padding-block: 80px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+}
+
+.traditions-final img {
+	width: 145px;
+	height: auto;
+
+	margin-bottom: 26px;
+}
+
+.traditions-final p {
+	margin: 0;
+
+	color: var(--color-navy);
+
+	font-size: clamp(34px, 4.6vw, 64px);
+	font-weight: 600;
+	letter-spacing: -0.04em;
+}
+
+.traditions-final h2 {
+	margin: -3px 0 0;
+
+	color: var(--color-blue);
+
+	font-size: clamp(72px, 10vw, 150px);
+	font-weight: 700;
+	font-style: italic;
+	line-height: 0.88;
+	letter-spacing: -0.07em;
+}
+
+.traditions-final span {
+	margin-top: 36px;
+
+	color: var(--color-muted);
+
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
+
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (max-width: 900px) {
+
+	.traditions-heading > div,
+	.traditions-hero__content,
+	.hymn-layout,
+	.ulk-layout {
+		grid-template-columns: 1fr;
+		gap: 34px;
+	}
+
+	.traditions-heading > div > p {
+		margin-left: 0;
+	}
+
+	.traditions-hero__inner {
+		min-height: 560px;
+	}
+
+	.traditions-hero__text {
+		max-width: 520px;
+	}
+
+	.brandbook-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.hymn-details,
+	.ulk-content {
+		margin-top: 0;
+		padding-top: 0;
+	}
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 620px) {
+
+	.traditions-container {
+		width: min(calc(100% - 32px), var(--container));
+	}
+
+	.traditions-hero__inner {
+		min-height: 500px;
+		padding-block: 44px 48px;
+	}
+
+	.traditions-hero h1 {
+		font-size: clamp(60px, 20vw, 90px);
+		line-height: 0.83;
+	}
+
+	.traditions-hero__text p {
+		font-size: 16px;
+	}
+
+	.traditions-section .traditions-container,
+	.brandbook-section .traditions-container,
+	.hymn-layout,
+	.ulk-layout {
+		padding-block: 76px 82px;
+	}
+
+	.traditions-heading {
+		padding-bottom: 25px;
+	}
+
+	.traditions-heading h2,
+	.hymn-heading h2,
+	.ulk-heading h2 {
+		font-size: clamp(46px, 15vw, 68px);
+	}
+
+	.traditions-heading > div {
+		margin-top: 18px;
+	}
+
+	.traditions-heading > div > p,
+	.hymn-heading > p:last-child,
+	.ulk-intro {
+		font-size: 15px;
+	}
+
+	.event-row {
+		min-height: 86px;
+
+		grid-template-columns: 42px 1fr 25px;
+
+		gap: 10px;
+	}
+
+	.event-row:hover {
+		padding-inline: 0;
+		background: transparent;
+	}
+
+	.event-row h3 {
+		font-size: 24px;
+	}
+
+	.events-note {
+		margin-left: 0;
+	}
+
+	.brandbook-grid {
+		gap: 14px;
+	}
+
+	.brand-card {
+		min-height: 285px;
+
+		padding: 22px;
+
+		border-radius: 22px;
+	}
+
+	.brand-card--colors {
+		padding: 0;
+	}
+
+	.brand-card--colors .brand-card__header {
+		top: 22px;
+		left: 22px;
+		right: 22px;
+	}
+
+	.brand-card__logo {
+		height: 215px;
+	}
+
+	.brand-colors {
+		min-height: 285px;
+	}
+
+	.brand-colors > div {
+		padding: 22px;
+
+		font-size: 23px;
+	}
+
+	.polo-word strong {
+		font-size: 84px;
+	}
+
+.anthem-card__content {
+	min-height: 220px;
+	padding-top: 38px;
+}
+
+.anthem-preview {
+	font-size: 17px;
+	line-height: 1.5;
+}
+
+.anthem-card__button {
+	margin-top: 17px;
+
+	font-size: 12px;
+}
+
+.anthem-card__word {
+	margin-top: 20px;
+
+	font-size: 62px;
+}
+
+	.hymn-layout,
+	.ulk-layout {
+		gap: 36px;
+	}
+
+	.hymn-details summary {
+		min-height: 76px;
+
+		font-size: 16px;
+	}
+
+	.hymn-details__content > p,
+	.hymn-chorus {
+		font-size: 15px;
+	}
+
+	.chant-section .traditions-container {
+		padding-block: 74px 78px;
+	}
+
+	.chant-section blockquote {
+		margin-top: 36px;
+
+		font-size: clamp(34px, 11vw, 50px);
+	}
+
+	.chant-footer {
+		margin-top: 46px;
+	}
+
+	.ulk-item {
+		grid-template-columns: 38px 1fr;
+
+		gap: 12px;
+	}
+
+	.ulk-item p {
+		font-size: 19px;
+	}
+
+	.ulk-item .ulk-chant {
+		font-size: 17px;
+	}
+
+	.traditions-final__inner {
+		min-height: 430px;
+	}
+
+	.traditions-final img {
+		width: 115px;
+	}
+
+	.traditions-final p {
+		font-size: 34px;
+	}
+
+	.traditions-final h2 {
+		font-size: clamp(72px, 23vw, 108px);
+	}
+		.event-row {
+		min-height: 82px;
+
+		grid-template-columns: 38px 1fr 32px;
+
+		gap: 10px;
+	}
+
+	.event-row:hover {
+		padding-inline: 0;
+	}
+
+	.event-row h3 {
+		font-size: 23px;
+	}
+
+	.event-row__icon {
+		width: 30px;
+		height: 30px;
+
+		font-size: 19px;
+	}
+
+	.event-expand__inner {
+		grid-template-columns: 90px minmax(0, 1fr);
+
+		gap: 14px;
+
+		max-width: 100%;
+	}
+
+	.event-item[open] .event-expand__inner {
+		padding: 5px 0 22px 38px;
+	}
+
+	.event-expand__media {
+		width: 90px;
+		height: 72px;
+
+		border-radius: 9px;
+	}
+
+	.event-expand__text {
+		max-width: none;
+	}
+
+	.event-expand__text p {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+	
+	.brand-card--anthem {
+	min-height: 300px;
+}
+
+.anthem-card__preview {
+	min-height: 235px;
+	padding-top: 38px;
+}
+
+.anthem-preview {
+	font-size: 17px;
+	line-height: 1.5;
+}
+
+.anthem-toggle {
+	margin-top: 16px;
+	font-size: 12px;
+}
+
+.anthem-card__word {
+	font-size: 62px;
+}
+
+.anthem-card__full {
+	top: 58px;
+	left: 22px;
+	right: 22px;
+	bottom: 22px;
+}
+
+.anthem-card__lyrics > p,
+.anthem-card__chorus {
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.brand-card--polo {
+	grid-template-columns: 46% 54%;
+	min-height: 285px;
+}
+
+.polo-card__content {
+	padding: 22px;
+}
+
+.polo-card__text h3 {
+	font-size: 27px;
+}
+
+.anthem-card--anthem {
+	min-height: 285px;
+}
+
+.anthem-card__header > span:first-child {
+	font-size: 16px;
+}
+
+.anthem-inline {
+	margin-top: 32px;
+}
+
+.anthem-preview p {
+	font-size: 17px;
+}
+
+.anthem-inline__lyrics {
+	max-height: 180px;
+}
+
+.anthem-inline__lyrics > p,
+.anthem-inline__chorus {
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+}

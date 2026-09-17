@@ -1,0 +1,454 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+import '../../styles/traditions.css';
+
+const events = [
+	{
+		title: 'Посвята',
+		image: '/images/traditions/initiation.jpg',
+		alt: 'Посвята РЛУС «Десна»',
+		description:
+			'Перший традиційний захід для нових учасників, під час якого вони знайомляться з командою та символічно стають частиною РЛУС «Десна».',
+	},
+	{
+		title: 'Творчий вечір',
+		image: '/images/traditions/creative-evening.jpg',
+		alt: 'Творчий вечір РЛУС «Десна»',
+		description:
+			'Подія, де лідери можуть продемонструвати свої таланти, виступити перед командою та поділитися творчістю.',
+	},
+	{
+		title: 'Мрія',
+		image: '/images/traditions/dream.jpg',
+		alt: 'Благодійна ініціатива «Мрія»',
+		description:
+			'Благодійна ініціатива до Дня Святого Миколая, створена, щоб подарувати дітям атмосферу свята, тепла й радості.',
+	},
+	{
+		title: 'Вертеп',
+		image: '/images/traditions/vertep.jpg',
+		alt: 'Вертеп РЛУС «Десна»',
+		description:
+			'Різдвяна ініціатива «Десни», під час якої лідери виступають із вертепом і колядками, щоб подарувати святковий настрій, підтримку й тепло.',
+	},
+	{
+		title: 'День з Десною',
+		image: '/images/traditions/day-with-desna.jpg',
+		alt: 'День з Десною',
+		description:
+			'Зустріч до дня народження «Десни», коли лідери збираються разом, відпочивають, спілкуються та проводять час командою.',
+	},
+	{
+		title: 'Випускний',
+		image: '/images/traditions/graduation.jpg',
+		alt: 'Випускний РЛУС «Десна»',
+		description:
+			'Подія, під час якої «Десна» проводжає своїх випускників, дякує їм за внесок у розвиток Ради та разом згадує найважливіші моменти спільних років.',
+	},
+];
+
+const ulkSongs = [
+	'Слово Лідер',
+	'Гімн УЛК',
+	'Лідер Назавжди',
+];
+---
+
+<Layout
+	title="Традиції — РЛУС «Десна»"
+	description="Традиції, символи, брендбук і гімн РЛУС «Десна»."
+>
+	<Header />
+
+	<main class="traditions-page">
+
+		<!-- HERO -->
+		<section class="traditions-hero">
+			<div class="traditions-container traditions-hero__inner">
+				<p class="traditions-kicker">
+					Культура РЛУС «Десна»
+				</p>
+
+				<div class="traditions-hero__content">
+					<h1>
+						Традиції
+						<span>«Десни»</span>
+					</h1>
+
+					<div class="traditions-hero__text">
+						<p>
+							Те, що об’єднує покоління лідерів,
+							формує нашу спільноту та робить
+							«Десну» впізнаваною.
+						</p>
+
+						<strong>
+							Десна — це родина.
+						</strong>
+					</div>
+				</div>
+			</div>
+		</section>
+
+<!-- EVENTS -->
+<section class="traditions-section">
+	<div class="traditions-container">
+
+		<header class="traditions-heading">
+			<p class="traditions-label">
+				01 / Традиції
+			</p>
+
+			<div>
+				<h2>
+					Традиційні
+					<span>заходи</span>
+				</h2>
+
+				<p>
+					Події, які стали частиною
+					історії та культури РЛУС «Десна».
+				</p>
+			</div>
+		</header>
+
+
+		<div class="events-list" data-events-list>
+			{events.map((event, index) => (
+				<details class="event-item" data-event-item>
+
+					<summary class="event-row">
+						<span class="event-row__number">
+							{String(index + 1).padStart(2, '0')}
+						</span>
+
+						<h3>{event.title}</h3>
+
+						<span
+							class="event-row__icon"
+							aria-hidden="true"
+						>
+							+
+						</span>
+					</summary>
+
+
+					<div class="event-expand">
+						<div class="event-expand__inner">
+
+							<div class="event-expand__media">
+								<img
+									src={event.image}
+									alt={event.alt}
+									loading="lazy"
+								/>
+							</div>
+
+							<div class="event-expand__text">
+								<p>{event.description}</p>
+							</div>
+
+						</div>
+					</div>
+
+				</details>
+			))}
+		</div>
+
+	</div>
+</section>
+
+
+<!-- BRANDBOOK -->
+		<section class="brandbook-section">
+			<div class="traditions-container">
+
+				<header class="traditions-heading traditions-heading--light">
+					<p class="traditions-label">
+						02 / Айдентика
+					</p>
+
+					<div>
+						<h2>
+							Брендбук
+							<span>«Десни»</span>
+						</h2>
+
+						<p>
+							Символи й елементи, за якими
+							впізнають нашу Раду.
+						</p>
+					</div>
+				</header>
+
+
+				<div class="brandbook-grid">
+
+					<article class="brand-card brand-card--logo">
+						<div class="brand-card__header">
+							<span>Логотип</span>
+							<span>01</span>
+						</div>
+
+						<div class="brand-card__logo">
+							<img
+								src="/images/desna-logo.png"
+								alt="Логотип РЛУС «Десна»"
+							/>
+						</div>
+					</article>
+
+
+					<article class="brand-card brand-card--colors">
+						<div class="brand-card__header">
+							<span>Кольори</span>
+							<span>02</span>
+						</div>
+
+						<div class="brand-colors">
+							<div class="brand-colors__blue">
+								Синій
+							</div>
+
+							<div class="brand-colors__yellow">
+								Жовтий
+							</div>
+						</div>
+					</article>
+
+
+					<article class="brand-card brand-card--polo">
+	<div class="polo-card__media">
+		<img
+			src="/images/traditions/desna-polo.jpg"
+			alt="Фірмове поло РЛУС «Десна»"
+			loading="lazy"
+		/>
+	</div>
+
+	<div class="polo-card__content">
+		<div class="brand-card__header">
+			<span>Форма</span>
+			<span>03</span>
+		</div>
+
+		<div class="polo-card__text">
+			<span>Наша форма</span>
+			<h3>Поло «Десни»</h3>
+		</div>
+	</div>
+</article>
+
+
+					<article class="brand-card brand-card--anthem">
+	<div class="brand-card__header anthem-card__header">
+		<span>Гімн</span>
+		<span>04</span>
+	</div>
+
+	<details class="anthem-inline">
+		<summary>
+			<div class="anthem-preview">
+				<p>
+					Сьогодні середа<br />
+					у зборі вся Десна<br />
+					на збори поспішаємо ми…
+				</p>
+			</div>
+
+			<div class="anthem-action">
+				<span class="anthem-action__open">
+					Читати повністю
+				</span>
+
+				<span class="anthem-action__close">
+					Згорнути
+				</span>
+
+				<span
+					class="anthem-action__icon"
+					aria-hidden="true"
+				>
+					+
+				</span>
+			</div>
+		</summary>
+
+		<div class="anthem-inline__lyrics">
+			<p>
+				Сьогодні середа<br />
+				у зборі вся Десна<br />
+				на збори поспішаємо ми<br />
+				летим ми через гори та степи
+			</p>
+
+			<p>
+				В президії є план<br />
+				сто тисяч пунктів там<br />
+				робота нас чекає усіх<br />
+				насичений івентами весь рік
+			</p>
+
+			<p>
+				Ми як родина<br />
+				Велика та єдина<br />
+				Десна дає нам крила<br />
+				І знаєм те, що Київ чекає на нас
+			</p>
+
+			<div class="anthem-inline__chorus">
+				<strong>Приспів</strong>
+
+				<p>
+					У Десні всі разом сила ми це знаємо<br />
+					працюєм, пишемо плани та не зволікаємо<br />
+					Лиш позитивом всіх навколо заряджаємо<br />
+					І ми усі одна сімʼя
+				</p>
+			</div>
+
+			<p>
+				У секторах панує наш любий директорат<br />
+				якщо нам кинуть виклик — наведуть вони швиденько лад<br />
+				І завдяки їм у команді завжди ідей мільярд<br />
+				Ми у Десні як в кораблі
+			</p>
+
+			<p>
+				Із лідерами ми<br />
+				Дружні та близькі<br />
+				В команді лише позитив панує<br />
+				Поло Десни дуже усім пасує
+			</p>
+
+			<p>
+				За планом ми ідем<br />
+				УЛК не підведем<br />
+				Бо якість й чіткість це усе — про нас<br />
+				Ідей в нас неосяжний ще запас
+			</p>
+
+			<p>
+				Не зволікай<br />
+				У корабель стрибай<br />
+				Й також не забувай<br />
+				Ти, що Київ чекає на нас
+			</p>
+		</div>
+	</details>
+</article>
+
+				</div>
+			</div>
+		</section>
+
+
+		<!-- CHANT -->
+		<section class="chant-section">
+			<div class="traditions-container">
+
+				<p class="traditions-label traditions-label--yellow">
+					04 / Кричалка
+				</p>
+
+				<blockquote>
+					У Десні всі разом — сила,<br />
+					колектив дає нам крила.<br />
+					Дружність, праця і сім’я —<br />
+					борт міцного корабля.
+				</blockquote>
+
+				<div class="chant-footer">
+					<span>РЛУС «Десна»</span>
+					<span>→</span>
+				</div>
+
+			</div>
+		</section>
+
+
+		<!-- ULK -->
+		<section class="ulk-section">
+			<div class="traditions-container ulk-layout">
+
+				<div class="ulk-heading">
+					<p class="traditions-label">
+						05 / Учнівська ліга Києва
+					</p>
+
+					<h2>
+						Традиції
+						<span>УЛК</span>
+					</h2>
+				</div>
+
+
+				<div class="ulk-content">
+					<p class="ulk-intro">
+						Наприкінці кожного заходу УЛК
+						традиційно виконуються спільні пісні
+						та кричалка.
+					</p>
+
+					<div class="ulk-item">
+						<span>01</span>
+
+						<div>
+							<small>Пісні</small>
+
+							{ulkSongs.map((song) => (
+								<p>{song}</p>
+							))}
+
+							<em>
+								Кожна з них має власні рухи.
+							</em>
+						</div>
+					</div>
+
+
+					<div class="ulk-item">
+						<span>02</span>
+
+						<div>
+							<small>Кричалка</small>
+
+							<p class="ulk-chant">
+								Голосієво, Десна, Шева, Дарниця,
+								Святошин, Оболонь, Поділ, Дніпро,
+								Солома, Печерськ!
+							</p>
+
+							<em>×3</em>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+		<!-- FINAL -->
+		<section class="traditions-final">
+			<div class="traditions-container traditions-final__inner">
+				<img
+					src="/images/desna-logo.png"
+					alt=""
+					aria-hidden="true"
+				/>
+
+				<p>Десна — це</p>
+
+				<h2>родина.</h2>
+
+				<span>РЛУС «Десна»</span>
+			</div>
+		</section>
+
+	</main>
+
+	<Footer />
+</Layout>
