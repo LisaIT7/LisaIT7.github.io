@@ -447,6 +447,23 @@ const ulkSongs = [
 			</div>
 		</section>
 
+		<script>
+	const eventItems =
+		document.querySelectorAll<HTMLDetailsElement>('[data-event-item]');
+
+	eventItems.forEach((item) => {
+		item.addEventListener('toggle', () => {
+			if (!item.open) return;
+
+			eventItems.forEach((otherItem) => {
+				if (otherItem !== item) {
+					otherItem.open = false;
+				}
+			});
+		});
+	});
+</script>
+
 	</main>
 
 	<Footer />

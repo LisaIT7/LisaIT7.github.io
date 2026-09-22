@@ -4,6 +4,39 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
 const newsItems = [
+
+{
+	date: '16 вересня',
+	category: 'Лідерський захід',
+	title: 'Твій крок у лідерство',
+
+	description:
+		'У Козацькому ліцеї №283 відбувся перший захід нового навчального року — «Твій крок у лідерство». Майбутні учасники ближче познайомилися з роботою РЛУС «Десна», її секторами та напрямами діяльності, а також мали можливість познайомитися одне з одним і з командою Ради.',
+
+	highlight:
+		'Перший крок майбутніх лідерів до команди «Десни»',
+
+	image: '/images/news/leadership-step.jpg',
+
+	imageAlt: 'Захід «Твій крок у лідерство»',
+},
+
+{
+	date: '13 вересня',
+	category: 'Освітній захід',
+	title: 'Level Up: Можливості',
+
+	description:
+		'Деснянські лідери відвідали захід «Level Up: Можливості» від SHARM Leader. Спікерки зі Sparkle розповіли про міжнародні обміни, тренінги та волонтерські програми, а також поділилися порадами щодо написання мотиваційних листів.',
+
+	highlight:
+		'Міжнародні можливості, волонтерство та мотиваційні листи',
+
+	image: '/images/news/level-up.jpg',
+
+	imageAlt: 'Захід «Level Up: Можливості»',
+},
+
 	{
 		date: '22 серпня',
 		category: 'Фестиваль',
@@ -19,10 +52,12 @@ const newsItems = [
 			Якщо твоє фото зараз називається інакше,
 			зміни ТІЛЬКИ цей шлях.
 		*/
-		image: '/images/projects/fest.jpg',
+		image: '/images/news/fest.jpg',
 
-		imageAlt: 'Фестиваль Борщу',
+		imageAlt: 'Фестиваль Борщу', 
 	},
+
+	
 ];
 ---
 
@@ -109,19 +144,6 @@ const newsItems = [
 										)
 									}
 
-									<div class="news-card__footer">
-										<span class="news-card__read">
-											Читати далі
-
-											<svg
-												viewBox="0 0 24 24"
-												aria-hidden="true"
-											>
-												<path d="M5 12h13" />
-												<path d="M13 6l6 6-6 6" />
-											</svg>
-										</span>
-									</div>
 
 								</div>
 
@@ -460,34 +482,6 @@ const newsItems = [
 		font-size: 14px;
 		font-weight: 650;
 		line-height: 1.5;
-	}
-
-	.news-card__footer {
-		margin-top: auto;
-		padding-top: 34px;
-	}
-
-	.news-card__read {
-		display: inline-flex;
-		align-items: center;
-		gap: 14px;
-
-		color: rgba(13, 22, 38, 0.45);
-
-		font-size: 14px;
-		font-weight: 700;
-	}
-
-	.news-card__read svg {
-		width: 21px;
-		height: 21px;
-
-		fill: none;
-		stroke: currentColor;
-		stroke-width: 1.8;
-
-		stroke-linecap: round;
-		stroke-linejoin: round;
 	}
 
 
